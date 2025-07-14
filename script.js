@@ -1,34 +1,61 @@
+// Масштабируемый список постов
+const posts = [
+    /* Список ваших тестовых постов */
+];
+
 let currentPage = 1;
 const postsPerPage = 5;
 
-// Функция загрузки новой порции постов
-async function loadMorePosts() {
-    const newPostsContainer = document.createElement('div');
-    for(let i=0; i<postsPerPage; i++) {
-        let postNumber = currentPage * postsPerPage + i + 1;
-        let postDiv = `<div class="post"><p>Пост №${postNumber}</p></div>`;
-        newPostsContainer.innerHTML += postDiv;
-    }
-    document.getElementById('content').appendChild(newPostsContainer);
-    currentPage++;
+// Рендерит посты на странице
+function renderPosts(postsData) {
+    const feedContainer = document.getElementById('feed-container');
+    postsData.forEach((post) => {
+        let postHTML = `
+            <div class="post">
+                <div class="post-header">
+                    <img src="${post.avatar}" alt="Avatar" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;" />
+                    <span>${post.author}</span>
+                </div>
+                ${post.image ? `<div class="post-image"><img src="${post.image}" /></div>` : ''}
+                <div class="post-text">${post.text}</div>
+            </div>
+        `;
+        feedContainer.insertAdjacentHTML("beforeend", postHTML);
+    });
 }
 
-// Добавляем обработчик события для отслеживания конца страницы
-window.addEventListener("scroll", () => {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        loadMorePosts();
+// Эмулируем загрузку постов с задержкой
+async function fetchMorePosts() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(posts.slice(currentPage * postsPerPage, (currentPage + 1) * postsPerPage));
+        }, 1000);
+    });
+}
+
+// Обработчик события scroll для бесконечного скролла
+let isLoading = false;
+document.addEventListener('scroll', async () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && !isLoading) {
+        isLoading = true;
+        showLoader(); // Показываем лоадер
+        
+        try {
+            const morePosts = await fetchMorePosts();
+            if (morePosts.length > 0) {
+                renderPosts(morePosts);
+                currentPage++; // Переходим на следующую страницу
+            } else {
+                console.log('Больше постов нет.');
+            }
+        } catch(error) {
+            console.error('Ошибка загрузки:', error.message);
+        } finally {
+            hideLoader(); // Убираем лоадер
+            isLoading = false;
+        }
     }
 });
 
-// Обработчик кликов по пунктам меню
-document.querySelectorAll('#sidebar-menu a').forEach(link => {
-    link.addEventListener('click', e => {
-        // Удаляем класс active у всех ссылок
-        document.querySelectorAll('#sidebar-menu a').forEach(a => a.classList.remove('active'));
-        // Добавляем класс active выбранной ссылке
-        e.target.classList.add('active');
-        
-        // Здесь можно добавить логику фильтрации по тегам или категориям
-        console.log(`Выбран тег ${e.target.dataset.tag}`);
-    });
-});
+// Показываем начальную выборку постов при открытии страницы
+renderPosts(posts.slice(0, postsPerPage)); // Начальная загрузка первых пяти постов
