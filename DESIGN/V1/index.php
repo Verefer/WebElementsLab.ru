@@ -7,6 +7,24 @@
     <title>V1-Design</title>
 </head>
 <body>
-    
+    <header>
+        <img src="logo.png" alt="Logo">
+        <nav>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </nav>
+        <a href="profil">Профиль</a> <!-- в общем личный кабинет -->
+    </header>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
 </body>
 </html>
