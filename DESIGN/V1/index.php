@@ -21,20 +21,20 @@
         <a href="profil">Профиль</a> <!-- в общем личный кабинет -->
     </header>
     <main>
-        <div>
-            <div>info</div>
-            <div>info</div>
-            <div>info</div>
+        <div class="one_block">
+            <div classs="two_block"><p>info</p></div>
+            <div classs="two_block"><p>info</p></div>
+            <div classs="two_block"><p>info</p></div>
         </div>
-        <div>
-            <div>info</div>
-            <div>info</div>
-            <div>info</div>
+        <div class="one_block">
+            <div classs="two_block"><p>info</p></div>
+            <div classs="two_block"><p>info</p></div>
+            <div classs="two_block"><p>info</p></div>
         </div>
-        <div>
-            <div>info</div>
-            <div>info</div>
-            <div>info</div>
+        <div class="one_block">
+            <div classs="two_block"><p>info</p></div>
+            <div classs="two_block"><p>info</p></div>
+            <div classs="two_block"><p>info</p></div>
         </div>
     </main>
     <footer>

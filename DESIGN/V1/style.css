@@ -1,3 +1,13 @@
+html{
+    font-size: 16px;
+}
+
+body{
+    max-width: 85rem;
+    margin: auto;
+    padding: auto;
+}
+
 nav ul {
     list-style-type: none;
     padding: 15px;
@@ -20,4 +30,20 @@ nav ul li a {
 nav ul li a:hover {
     color: #fff; 
     background-color: #000000a1; 
+}
+
+.one_block{
+    margin: auto;
+    width: 80rem;
+    height: 36rem;
+    display: flex;
+    border: 1px solid black;
+}
+
+.two_block{
+    border: 1px solid black;
+    height: 34rem;
+    width: 26rem;
+    margin: auto;
+    text-align: center;
 }
