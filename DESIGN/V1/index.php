@@ -11,20 +11,34 @@
         <img src="logo.png" alt="Logo">
         <nav>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li><a href="#">пункт 1</a></li>
+                <li><a href="#">пункт 2</a></li>
+                <li><a href="#">пункт 3</a></li>
+                <li><a href="#">пункт 4</a></li>
+                <li><a href="#">пункт 5</a></li>
             </ul>
         </nav>
         <a href="profil">Профиль</a> <!-- в общем личный кабинет -->
     </header>
     <main>
-
+        <div>
+            <div>info</div>
+            <div>info</div>
+            <div>info</div>
+        </div>
+        <div>
+            <div>info</div>
+            <div>info</div>
+            <div>info</div>
+        </div>
+        <div>
+            <div>info</div>
+            <div>info</div>
+            <div>info</div>
+        </div>
     </main>
     <footer>
-
+        Подвал
     </footer>
 </body>
 </html>
