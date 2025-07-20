@@ -33,3 +33,10 @@ a{
 a:hover{
   color: aquamarine;
 }
+
+input[type='search'] {
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+}
