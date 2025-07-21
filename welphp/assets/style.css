@@ -107,3 +107,85 @@ input[type='email'] {
 .sub-btn:hover {
     background-color: #005fcc;
 }
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #3B3B4B;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #8A80F2;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  width: calc(100% - 22px); 
+  padding: 0.8rem;
+  margin-bottom: 0.9rem;
+  border-radius: 0.25rem;
+  background-color: #575766;
+  color: #ffffff;
+  border: 1px solid #8A80F2;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #8A80F2;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #644D9E;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  min-height: 1em;
+}
+
+.input-error {
+  border-color: red !important;
+  outline-color: red;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.checkbox-group a {
+  color: #0077ff;
+  text-decoration: underline;
+}
+
+.checkbox-group input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 0.5rem;
+}
