@@ -28,6 +28,5 @@
             <a class="reg-btn" href='#'>Регистрация</a>
         </div>
     </header>
-    <hr>
 </body>
 </html>
