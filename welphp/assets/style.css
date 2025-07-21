@@ -1,12 +1,15 @@
-html{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-}
-
 body{
+    font-family: "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     width: 100%;
     margin: 0;
     background-color: #000022;
+    font-size: 16px;
+    color: #D1D7E0;
+}
+
+h1, p{
+    margin: 0;
+    padding: 0;
 }
 
 .logo-header{
@@ -15,7 +18,7 @@ body{
 
 a{
   text-decoration: none;
-  color: white;
+  color: #87d9ff;
 }
 
 .reg-btn{
@@ -25,7 +28,7 @@ a{
 }
 
 a:hover{
-  color: aquamarine;
+  text-decoration: underline;
 }
 
 input[type='search'] {
@@ -51,7 +54,7 @@ header{
 }
 
 .slogan{
-    color: white;
+    color: #D1D7E0;
     margin-top: 4rem;
     display: flex;
     flex-direction:  column;
@@ -78,7 +81,7 @@ input[type='email'] {
     height: 3rem;
     padding: 0 1rem;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #D1D7E0;
     border-right: none;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
@@ -95,7 +98,7 @@ input[type='email'] {
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     background-color: #0077ff;
-    color: white;
+    color: #D1D7E0;
     cursor: pointer;
     box-sizing: border-box;
     display: flex;
@@ -108,39 +111,31 @@ input[type='email'] {
     background-color: #005fcc;
 }
 
-form {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 1rem;
-  background-color: #3B3B4B;
-  border-radius: 0.8rem;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-}
-
 label {
   display: block;
   margin-bottom: 5px;
-  color: #8A80F2;
+  color: #D1D7E0;
 }
 
 input[type="text"],
 input[type="password"],
 textarea {
-  width: calc(100% - 22px); 
+  width: 100%; 
   padding: 0.8rem;
   margin-bottom: 0.9rem;
   border-radius: 0.25rem;
-  background-color: #575766;
-  color: #ffffff;
+  background-color: #ffffff00;
+  color: #D1D7E0;
   border: 1px solid #8A80F2;
+  box-sizing: border-box;
 }
 
 input[type="submit"],
 input[type="reset"] {
   width: 100%;
   padding: 0.9rem;
-  background-color: #8A80F2;
-  color: #ffffff;
+  background-color: #013d50;
+  color: #D1D7E0;
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
@@ -149,7 +144,7 @@ input[type="reset"] {
 
 input[type="submit"]:hover,
 input[type="reset"]:hover {
-  background-color: #644D9E;
+  background-color: #015872;
 }
 
 textarea {
@@ -188,4 +183,100 @@ textarea {
 .checkbox-group input[type="checkbox"] {
   transform: scale(1.2);
   margin-right: 0.5rem;
+}
+
+.authentication{
+    width: 24rem;
+    margin-top: 2rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.auth-text-up{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.auth-text-up h1{
+    font-size: 1.25rem;
+}
+
+.auth-logo{
+    height: 4rem;
+    width: 4rem;
+}
+
+.auth-form{
+    width: 100%;
+}
+
+.label-link{
+    float: right;
+}
+
+.right-0{
+    right: 0 !important;
+}
+
+.top-0{
+    top: 0 !important;
+}
+
+.position-absolute{
+    position: absolute !important;
+}
+
+.position-relative{
+    position: relative !important;
+}
+
+.auth-form form{
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.auth-down{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+    padding: 1.5rem;
+    background-color: #0b0b22;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }

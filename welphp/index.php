@@ -24,8 +24,8 @@
         </div>
         <div class="nav-right">
             <!-- <input type='search' placeholder='Поиск...'> -->
-            <a href='#'>Вход</a>
-            <a class="reg-btn" href='#'>Регистрация</a>
+            <a href='login.php'>Вход</a>
+            <a class="reg-btn" href='register.php'>Регистрация</a>
         </div>
     </header>
     <div class="slogan">
@@ -41,60 +41,5 @@
 <!-- Внешний вид карточек -->
     </div>
 
-    <div> 
-<!-- форма регистрации -->
-        <form name="registrationForm" onsubmit="return validateForm()" method="post">
-        <div class="form-group">
-            <label for="name">Имя:</label>
-            <input type="text" id="name" name="name">
-            <div class="error-msg" id="name-error"></div>
-        </div>
-
-        <div class="form-group">
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" name="password">
-            <div class="error-msg" id="password-error"></div>
-        </div>
-
-        <div class="form-group">
-            <label for="confirmPassword">Подтвердите пароль:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword">
-            <div class="error-msg" id="confirmPassword-error"></div>
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email">
-            <div class="error-msg" id="email-error"></div>
-        </div>
-        <div class="form-group checkbox-group">
-            <label>
-                <input type="checkbox" id="agree" name="agree">
-                Я согласен с <a href="/privacy" target="_blank">политикой конфиденциальности</a>
-            </label>
-            <div class="error-msg" id="agree-error"></div>
-        </div>
-
-        <input type="submit" value="Зарегистрироваться">
-        </form>
-    </div>
-    <div>
-<!-- форма авторизации -->
-        <form name="loginForm" onsubmit="return validateLogin()" method="post">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email" placeholder="Введите почту...">
-                <div class="error-msg" id="email-error"></div>
-            </div>
-            <div class="form-group">
-                <label for="password">Пароль:</label>
-                <input type="password" id="password" name="password" placeholder="Введите пароль...">
-                <div class="error-msg" id="password-error"></div>
-            </div>
-            <input type="submit" value="Войти">
-        </form>
-        
-    </div>
-    <script src="assets/js/form_validation.js"></script>
 </body>
 </html>
