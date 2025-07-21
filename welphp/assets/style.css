@@ -52,7 +52,7 @@ header{
 
 .slogan{
     color: white;
-    margin-top: 8rem;
+    margin-top: 4rem;
     display: flex;
     flex-direction:  column;
     align-items: center;
@@ -61,4 +61,49 @@ header{
 .slogan h1{
     font-size: 3rem;
     text-align: center;
+}
+
+
+.sub-block {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content; 
+    box-shadow: 0 0 1.5rem rgba(139, 193, 255, 0.5);
+    border-radius: 0.5rem;
+}
+
+input[type='email'] {
+    height: 3rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.sub-btn {
+    height: 3rem;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    background-color: #0077ff;
+    color: white;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.sub-btn:hover {
+    background-color: #005fcc;
 }

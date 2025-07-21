@@ -9,7 +9,7 @@
       name="description"
       content="Web site Web Elements Lab">
     <link rel="apple-touch-icon" href="assets/img/logo192.png" >
-    <title>Web Elements Lab</title>
+    <title>WebElementsLab</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -23,14 +23,19 @@
             <a href='#'>Меню 5</a>
         </div>
         <div class="nav-right">
-            <input type='search' placeholder='Поиск...'>
+            <!-- <input type='search' placeholder='Поиск...'> -->
             <a href='#'>Вход</a>
             <a class="reg-btn" href='#'>Регистрация</a>
         </div>
     </header>
     <div class="slogan">
         <h1>Большой первый слоган - <br> на две строки хотябы</h1>
-        <h2>Маленький слоган, и нет я не крал у гитхаба дизайн</h4>
+        <h3>Подпишитесь на наши обновления, чтобы всегда первыми узнавать о новинках</h3>
     </div>
+    <div class="sub-block">
+        <input type="email" name="subcribeemail" id="subcribeemail" placeholder="Ваша почта...">
+        <button class="sub-btn" id="sub-btn">Подписаться</button>
+    </div>
+
 </body>
 </html>
