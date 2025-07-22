@@ -8,8 +8,12 @@ body{
 }
 
 h1, p{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .logo-header{
@@ -18,17 +22,21 @@ h1, p{
 
 a{
   text-decoration: none;
-  color: #87d9ff;
+  color: white;
+}
+
+.anim-hover-box-shadow{
+  transition: all 0.3s;
+}
+
+.anim-hover-box-shadow:hover{
+  box-shadow: 0 0 1rem rgba(139, 193, 255, 0.5);
 }
 
 .reg-btn{
   padding: 0.4rem 1.2rem;
   border: 1px white solid;
   border-radius: 0.5rem;
-}
-
-a:hover{
-  text-decoration: underline;
 }
 
 input[type='search'] {
@@ -57,7 +65,7 @@ header{
     color: #D1D7E0;
     margin-top: 4rem;
     display: flex;
-    flex-direction:  column;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -86,7 +94,6 @@ input[type='email'] {
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
     outline: none;
-    box-sizing: border-box;
 }
 
 .sub-btn {
@@ -100,7 +107,6 @@ input[type='email'] {
     background-color: #0077ff;
     color: #D1D7E0;
     cursor: pointer;
-    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,7 +133,6 @@ textarea {
   background-color: #ffffff00;
   color: #D1D7E0;
   border: 1px solid #8A80F2;
-  box-sizing: border-box;
 }
 
 input[type="submit"],
@@ -187,8 +192,7 @@ textarea {
 
 .authentication{
     width: 24rem;
-    margin-top: 2rem;
-    box-sizing: border-box;
+    margin-top: 1rem;
     padding: 1rem;
     gap: 1rem;
     display: flex;
@@ -237,6 +241,14 @@ textarea {
     position: relative !important;
 }
 
+.link-form{
+  color: #87d9ff;
+}
+
+.link-form:hover{
+  text-decoration: underline;
+}
+
 .auth-form form{
     gap: 1rem;
     display: flex;
@@ -272,11 +284,30 @@ footer{
     justify-content: center;
     padding: 1.5rem;
     background-color: #0b0b22;
-    box-sizing: border-box;
 }
 
 .wrapper{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+.f-s-09rem{
+  font-size: 0.9rem;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.a-i-center{
+  align-items: center;
+}
+
+.j-c-center{
+  justify-content: center;
+}
+
+.gap1{
+  gap: 1rem;
 }

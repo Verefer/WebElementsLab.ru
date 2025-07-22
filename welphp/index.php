@@ -25,21 +25,31 @@
         <div class="nav-right">
             <!-- <input type='search' placeholder='Поиск...'> -->
             <a href='login.php'>Вход</a>
-            <a class="reg-btn" href='register.php'>Регистрация</a>
+            <a class="reg-btn anim-hover-box-shadow" href='register.php'>Регистрация</a>
         </div>
     </header>
-    <div class="slogan">
-        <h1>Большой первый слоган - <br> на две строки хотябы</h1>
-        <h3>Подпишитесь на наши обновления, чтобы всегда первыми узнавать о новинках</h3>
-    </div>
-    <div class="sub-block">
-        <input type="email" name="subcribeemail" id="subcribeemail" placeholder="Ваша почта...">
-        <button class="sub-btn" id="sub-btn">Подписаться</button>
-    </div>
+    <div class="wrapper">
+        <main>
+        <div class="slogan">
+            <h1>Большой первый слоган - <br> на две строки хотябы</h1>
+            <h3>Подпишитесь на наши обновления, чтобы всегда первыми узнавать о новинках</h3>
+        </div>
+        <div class="sub-block">
+            <input type="email" name="subcribeemail" id="subcribeemail" placeholder="Ваша почта...">
+            <button class="sub-btn" id="sub-btn">Подписаться</button>
+            <script>
+                document.getElementById('sub-btn').addEventListener('click', function () {
+                    window.location.href = 'register.php';
+                });
+            </script>
+        </div>
 
-    <div>
-<!-- Внешний вид карточек -->
+        <div>
+    <!-- Внешний вид карточек -->
+        </div>
+        </main>
     </div>
+    <?php require_once 'includes/footer.php'; ?>
 
 </body>
 </html>

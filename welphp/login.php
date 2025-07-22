@@ -17,19 +17,21 @@
 <main>
     <div class="authentication ">
         <div class="auth-text-up">
-            <img src="assets/img/logo.svg" alt="logo" class="auth-logo">
+            <a href="index.php">
+                <img src="assets/img/logo.svg" alt="logo" class="auth-logo">
+            </a>
             <h1>Войти</h1>
         </div>
         <div class="auth-form">
             <form name="loginForm" onsubmit="return validateLogin()" method="post">
                 <div>
-                    <label for="email">Email:</label>
-                    <input type="text" name="login" id="login_field" autocapitalize="off" autocorrect="off" autocomplete="username" class="form-control  js-login-field" autofocus="autofocus" required="required">
+                    <label for="email">Почта или имя пользователя:</label>
+                    <input type="text" name="login" id="login_field" autocapitalize="off" autocorrect="off" autocomplete="username" class="form-control  js-login-field" autofocus="autofocus" required="required" placeholder="Ваша почта или имя пользователя">
                 </div>
                 <div class="position-relative">
                     <label for="password">Пароль:</label>
-                    <input type="password" name="password" id="password" class="form-control form-control js-password-field" autocomplete="current-password" required="required">
-                    <a class="label-link position-absolute top-0 right-0" id="forgot-password" href="/password_reset">Забыли пароль?</a>
+                    <input type="password" name="password" id="password" class="form-control form-control js-password-field" autocomplete="current-password" required="required" placeholder="Введите ваш пароль">
+                    <a class="label-link link-form position-absolute top-0 right-0" id="forgot-password" href="/password_reset">Забыли пароль?</a>
                 </div>
                 <div>
                     <input type="submit" value="Войти">
@@ -39,7 +41,7 @@
         <div class="auth-footer">
             <div class="auth-down">
                 <p>Нет аккаунта?</p>
-                <a href="register.php">Создать аккаунт</a>
+                <a class="link-form" href="register.php">Создать аккаунт</a>
             </div>
         </div>
         
