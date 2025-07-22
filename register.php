@@ -35,7 +35,7 @@
                 </div>
                 <label class="f-s-09rem d-flex a-i-center gap1">
                     <input type="checkbox" id="agree-privacy" name="agree-privacy" required="required">
-                    <p>Я согласен с <a class="link-form" href="/privacy" target="_blank">политикой конфиденциальности</a></p>
+                    <p>Я согласен с <a class="link-form" href="privacy.php" target="_blank">политикой конфиденциальности</a></p>
                 </label>
                 <label class="f-s-09rem d-flex a-i-center gap1">
                     <input type="checkbox" id="agree-mailing" name="agree-mailing" required="required" checked>
