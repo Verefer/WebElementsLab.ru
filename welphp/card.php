@@ -16,22 +16,22 @@
 <div class="wrapper">
 <?php require_once 'includes/header.php'; ?>
 <main>
-    <div class="d-flex gap1">
-        <div>
-            <p>Название</p>
-            <p>Автор</p>
+    <div class="d-flex gap1 card-page f-d-column">
+        <div class="d-flex j-c-space-between">
+            <h2>Название</h2>
+            <h2>Автор</h2>
         </div>
-        <div>
-            <div>
-                <div>
-                    <p>Элемент SVG или как html css</p>
+        <div class="f-d-row d-flex gap1">
+            <div class="left-card-page d-flex gap1 f-d-column">
+                <div class="block-element d-flex j-c-center a-i-center">
+                    <a class="btn" href="#">BUTTON</a>
                 </div>
-                <div>
-                    <a class="btn-card" href="#">Избранное</a>
-                    <a class="btn-card" href="#">Подписаться</a>
+                <div class="d-flex gap1 f-d-column">
+                    <a class="btn-card j-c-center d-flex" href="#">Избранное</a>
+                    <a class="btn-card j-c-center d-flex" href="#">Подписаться</a>
                 </div>
             </div>
-            <div>
+            <div class="block-code">
                 <p>Сюда как-то реализовать код</p>
             </div>
         </div>

@@ -7,7 +7,7 @@ body{
     color: #D1D7E0;
 }
 
-h1, p{
+h1, p, h2{
   margin: 0;
   padding: 0;
 }
@@ -308,6 +308,49 @@ footer{
   justify-content: center;
 }
 
+.j-c-space-between{
+  justify-content: space-between;
+}
+
 .gap1{
   gap: 1rem;
+}
+
+.f-d-column{
+  flex-direction: column;
+}
+
+.f-d-row{
+  flex-direction: row;
+}
+
+.btn{
+  color: white;
+  padding: 0.4rem 1.2rem;
+  border: 1px white solid;
+  border-radius: 0.5rem;
+}
+
+.btn:hover{
+  box-shadow: 0 0 1rem rgba(139, 193, 255, 0.5);
+}
+
+.btn-card{
+  color: white;
+  padding: 0.4rem 1.2rem;
+  border: 1px white solid;
+  border-radius: 50em;
+}
+
+.block-element{
+  border: 3px white solid;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+}
+
+.block-code{
+  border: 3px white solid;
+  width: 45rem;
+  height: 20rem;
 }
