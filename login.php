@@ -31,7 +31,7 @@
                 <div class="position-relative">
                     <label for="password">Пароль:</label>
                     <input type="password" name="password" id="password" class="form-control form-control js-password-field" autocomplete="current-password" required="required" placeholder="Введите ваш пароль">
-                    <a class="label-link link-form position-absolute top-0 right-0" id="forgot-password" href="/password_reset">Забыли пароль?</a>
+                    <a class="label-link link-form position-absolute top-0 right-0" id="forgot-password" href="password_reset.php">Забыли пароль?</a>
                 </div>
                 <div>
                     <input type="submit" value="Войти">
