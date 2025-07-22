@@ -9,7 +9,7 @@
       name="description"
       content="content">
     <link rel="apple-touch-icon" href="assets/img/logo192.png" >
-    <title>Вход | WebElementsLab</title>
+    <title>Переменная | WebElementsLab</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
