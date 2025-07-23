@@ -5,6 +5,11 @@ require_once __DIR__ . '/includes/db.php';
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+// Для отображения ошибок
+$emailError = '';
+$usernameError = '';
+$generalError = '';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
     $email = trim($_POST['email'] ?? '');
@@ -13,30 +18,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $agree_mailing = $_POST['agree-mailing'] ?? '';
 
     if (!$username || !$email || !$password || !$agree_privacy) {
-        $error = 'Пожалуйста, заполните все обязательные поля и примите политику';
+        $generalError = 'Пожалуйста, заполните все обязательные поля и примите политику';
     } else {
         // Проверка на существующего пользователя
-        $stmt = $pdo->prepare("SELECT id FROM users WHERE username = ? OR email = ?");
+        $stmt = $pdo->prepare("SELECT username, email FROM users WHERE username = ? OR email = ?");
         $stmt->execute([$username, $email]);
-        if ($stmt->fetch()) {
-            $error = 'Такой пользователь или почта уже зарегистрированы';
+        $existing = $stmt->fetch();
+
+        if ($existing) {
+            if ($existing['username'] === $username) {
+                $usernameError = 'Имя пользователя уже занято';
+            }
+            if ($existing['email'] === $email) {
+                $emailError = 'Почта уже зарегистрирована';
+            }
         } else {
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $role = 'user'; // по умолчанию
+            $role = 'user';
+
             $stmt = $pdo->prepare("INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)");
             $stmt->execute([$username, $email, $hash, $role]);
 
-            // Авторизуем пользователя сразу
             $_SESSION['user_logged_in'] = true;
             $_SESSION['username'] = $username;
             $_SESSION['role'] = $role;
 
-            header('Location: /index.php'); // или redirect куда нужно
+            header('Location: /index.php');
             exit;
         }
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -66,16 +79,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <form name="loginForm" onsubmit="return validateLogin()" method="post">
                 <div>
                     <label for="email">Почта:</label>
-                    <input type="text" name="email" id="email" placeholder="Укажите вашу почту" autocomplete="email" required>
+                    <input type="text" name="email" id="email" placeholder="Укажите вашу почту"
+                        autocomplete="email" required class="<?= $emailError ? 'input-error' : '' ?>"
+                        value="<?= htmlspecialchars($email ?? '') ?>">
+                    <?php if ($emailError): ?>
+                        <div class="input-hint-error"><?= htmlspecialchars($emailError) ?></div>
+                    <?php endif; ?>
                 </div>
                 <div class="position-relative">
                     <label for="username">Имя пользователя:</label>
-                    <input type="text" name="username" id="username" placeholder="Придумайте уникальное имя" required>
+                    <input type="text" name="username" id="username" placeholder="Придумайте уникальное имя"
+                        required class="<?= $usernameError ? 'input-error' : '' ?>"
+                        value="<?= htmlspecialchars($username ?? '') ?>">
+                    <?php if ($usernameError): ?>
+                        <div class="input-hint-error"><?= htmlspecialchars($usernameError) ?></div>
+                    <?php endif; ?>
                 </div>
                 <div class="position-relative">
                     <label for="password">Пароль:</label>
                     <input type="password" name="password" id="password" placeholder="Придумайте пароль" autocomplete="new-password" required>
                 </div>
+                <?php if ($generalError): ?>
+                    <div class="form-error"><?= htmlspecialchars($generalError) ?></div>
+                <?php endif; ?>
                 <label class="f-s-09rem d-flex a-i-center gap1">
                     <input type="checkbox" id="agree-privacy" name="agree-privacy" required="required">
                     <p>Я согласен с <a class="link-form" href="/privacy.php" target="_blank">политикой конфиденциальности</a></p>
@@ -95,11 +121,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <a class="link-form" href="/login.php">Войти</a>
             </div>
         </div>
-        
-        
     </div>
-    
-
+    <script src="/assets/js/form_validation.js"></script>
 </main>
 <?php require_once __DIR__ . '/templates/footer.php'; ?>
 </div>
