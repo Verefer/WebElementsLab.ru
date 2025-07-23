@@ -7,8 +7,12 @@
             <a href="/card.php">Карточка</a>
         </div>
         <div class="nav-right">
-            <!-- <input type='search' placeholder='Поиск...'> -->
-            <a href='/login.php'>Вход</a>
-            <a class="reg-btn anim-hover-box-shadow" href='/register.php'>Регистрация</a>
-        </div>
+        <?php if (isset($_SESSION['username'])): ?>
+            <span>Привет, <?= htmlspecialchars($_SESSION['username']) ?></span>
+            <a href="/logout.php" class="reg-btn anim-hover-box-shadow">Выход</a>
+        <?php else: ?>
+            <a href="/login.php">Вход</a>
+            <a class="reg-btn anim-hover-box-shadow" href="/register.php">Регистрация</a>
+        <?php endif; ?>
+    </div>
     </header>
