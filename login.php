@@ -59,7 +59,7 @@ if ($login === '' || $password === '') {
                 <div>
                     <label for="email">Почта или имя пользователя:</label>
                     <input type="text" name="login" id="login_field" autocapitalize="off" autocorrect="off" autocomplete="username" class="form-control  js-login-field" autofocus="autofocus" required="required" placeholder="Ваша почта или имя пользователя">
-                    <span class="error-message" id="username-error">&nbsp;</span>
+                    <span class="error-message" id="login-error">&nbsp;</span>
                 </div>
                 <div class="position-relative">
                     <label for="password">Пароль:</label>
