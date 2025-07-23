@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (field === 'email') {
                     if (data.exists) {
                         element.classList.add('invalid');
-                        emailError.textContent = 'Такая почта уже зарегистрирована';
+                        emailError.textContent = 'Указанный электронный адрес уже зарегистрирован';
                     } else {
                         element.classList.add('valid');
                         emailError.textContent = '';
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (field === 'username') {
                     if (data.exists) {
                         element.classList.add('invalid');
-                        usernameError.textContent = 'Такой логин уже занят';
+                        usernameError.textContent = 'Имя пользователя уже занято';
                     } else {
                         element.classList.add('valid');
                         usernameError.textContent = '';
