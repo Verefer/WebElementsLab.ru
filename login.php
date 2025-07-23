@@ -2,25 +2,16 @@
 session_start();
 require_once __DIR__ . '/includes/db.php';
 
-$login = trim($_POST['login'] ?? '');
-$password = $_POST['password'] ?? '';
-$errors = [
-    'login' => '',
-    'password' => '',
-];
-
+$errors = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if ($login === '') {
-        $errors['login'] = 'Поле обязательно для заполнения';
-    }
+    $email = trim($_POST['login'] ?? '');
+    $password = $_POST['password'] ?? '';
 
-    if ($password === '') {
-        $errors['password'] = 'Введите пароль';
-    }
-
-    if (!$errors['login'] && !$errors['password']) {
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :login OR email = :login LIMIT 1");
-        $stmt->execute(['login' => $login]);
+    if ($email === '' || $password === '') {
+        $errors[] = 'Пожалуйста, заполните все поля';
+    } else {
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email LIMIT 1");
+        $stmt->execute(['email' => $email]);
         $user = $stmt->fetch();
 
         if ($user && password_verify($password, $user['password'])) {
@@ -30,9 +21,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: /');
             exit;
         } else {
-            $errors['login'] = 'Неверный email/имя пользователя или пароль';
+            $errors[] = 'Неверный email или пароль';
         }
     }
+
+    // Отправка ошибок в формате JSON
+    header('Content-Type: application/json');
+    echo json_encode(['errors' => $errors]);
+    exit;
 }
 ?>
 
@@ -41,10 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/assets/img/favicon.ico">
-    <meta name="theme-color" content="#000000">
-    <meta name="description" content="content">
-    <link rel="apple-touch-icon" href="/assets/img/logo192.png">
     <title>Вход | WebElementsLab</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
@@ -59,17 +51,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <h1>Войти</h1>
         </div>
         <div class="auth-form">
-            <form name="loginForm" method="post" novalidate>
+            <form id="login-form" method="post" novalidate>
                 <div>
-                    <label for="login_field">Email или имя пользователя:</label>
-                    <input type="text" name="login" id="login_field" value="<?= htmlspecialchars($login) ?>" autocapitalize="off" autocorrect="off" autocomplete="username" class="form-control js-login-field" required placeholder="Email или имя">
-                    <span class="error-message" id="login-error"><?= $errors['login'] ?: '&nbsp;' ?></span>
+                    <label for="login_field">Email:</label>
+                    <input type="text" name="login" id="login_field" autocomplete="email"
+                           class="form-control" placeholder="Ваш email">
+                    <span class="error-message" id="login-error">&nbsp;</span>
                 </div>
                 <div class="position-relative">
                     <label for="password">Пароль:</label>
-                    <input type="password" name="password" id="password" class="form-control js-password-field" autocomplete="current-password" required placeholder="Введите ваш пароль">
-                    <a class="label-link link-form position-absolute top-0 right-0" id="forgot-password" href="/password_reset.php">Забыли пароль?</a>
-                    <span class="error-message" id="password-error"><?= $errors['password'] ?: '&nbsp;' ?></span>
+                    <input type="password" name="password" id="password" autocomplete="current-password"
+                           class="form-control" placeholder="Введите ваш пароль">
+                    <a class="label-link link-form position-absolute top-0 right-0"
+                       href="/password_reset.php">Забыли пароль?</a>
+                    <span class="error-message" id="password-error">&nbsp;</span>
                 </div>
                 <div>
                     <input type="submit" value="Войти">
@@ -83,6 +78,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
     </div>
+
+    <script>
+    document.getElementById('login-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const login = document.getElementById('login_field');
+        const password = document.getElementById('password');
+        const loginError = document.getElementById('login-error');
+        const passwordError = document.getElementById('password-error');
+
+        loginError.textContent = '\u00A0';
+        passwordError.textContent = '\u00A0';
+
+        let hasError = false;
+
+        if (login.value.trim() === '') {
+            loginError.textContent = 'Поле обязательно для заполнения';
+            hasError = true;
+        }
+
+        if (password.value.trim() === '') {
+            passwordError.textContent = 'Введите пароль';
+            hasError = true;
+        }
+
+        if (hasError) return;
+
+        const formData = new FormData(this);
+
+        const response = await fetch('', {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.errors && result.errors.length > 0) {
+            if (result.errors[0].includes('email') || result.errors[0].includes('пароль')) {
+                loginError.textContent = result.errors[0];
+                passwordError.textContent = result.errors[0];
+            }
+        } else {
+            window.location.href = '/';
+        }
+    });
+    </script>
 </main>
 <?php require_once __DIR__ . '/templates/footer.php'; ?>
 </div>
