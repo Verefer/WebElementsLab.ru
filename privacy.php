@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../assets/img/favicon.ico" >
+    <link rel="icon" href="/assets/img/favicon.ico" >
     <meta name="theme-color" content="#000000" >
     <meta
       name="description"
       content="Политика конфиденциальности">
-    <link rel="apple-touch-icon" href="../assets/img/logo192.png" >
+    <link rel="apple-touch-icon" href="/assets/img/logo192.png" >
     <title>Политика конфиденциальности | WebElementsLab</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <?php require_once '../templates/header.php'; ?>
+    <?php require_once '/templates/header.php'; ?>
     <div class="wrapper">
         <main class="gap1 d-flex f-d-column">
         <div class="d-flex a-i-center">
@@ -51,7 +51,7 @@
         </div>
     </main>
 </div>
-    <?php require_once '../templates/footer.php'; ?>
+    <?php require_once '/templates/footer.php'; ?>
 
 </body>
 </html>

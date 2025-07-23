@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/img/favicon.ico" >
+    <link rel="icon" href="/assets/img/favicon.ico" >
     <meta name="theme-color" content="#000000" >
     <meta
       name="description"
       content="content">
-    <link rel="apple-touch-icon" href="assets/img/logo192.png" >
+    <link rel="apple-touch-icon" href="/assets/img/logo192.png" >
     <title>Переменная | WebElementsLab</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
 <div class="wrapper">
-<?php require_once 'templates/header.php'; ?>
+<?php require_once '/templates/header.php'; ?>
 <main>
     <div class="d-flex gap1 card-page f-d-column">
         <div class="d-flex j-c-space-between">
@@ -40,7 +40,7 @@
         </div>
     </div>
 </main>
-<?php require_once 'templates/footer.php'; ?>
+<?php require_once '/templates/footer.php'; ?>
 </div>
 </body>
 </html>

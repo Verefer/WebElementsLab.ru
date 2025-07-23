@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/img/favicon.ico" >
+    <link rel="icon" href="/assets/img/favicon.ico" >
     <meta name="theme-color" content="#000000" >
     <meta name="robots" content="index, follow">
     <meta name="description" content="Библиотека сниппетов и UI-элементов на HTML, CSS и JS. Скачивайте, копируйте и используйте готовые решения для своих проектов.">
-    <link rel="apple-touch-icon" href="assets/img/logo192.png" >
+    <link rel="apple-touch-icon" href="/assets/img/logo192.png" >
     <title>WebElementsLab — HTML, CSS и JS сниппеты для веб-разработчиков</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <meta property="og:title" content="WebElementsLab — HTML/CSS/JS элементы">
     <meta property="og:description" content="Готовые сниппеты и UI для твоих проектов.">
-    <meta property="og:image" content="https://example.com/assets/img/social-preview.png">
+    <meta property="og:image" content="https://webelementslab.ru/assets/img/logo512.png">
     <meta property="og:url" content="https://webelementslab.ru/">
     <meta property="og:type" content="website">
 
 </head>
 <body>
-    <?php require_once 'templates/header.php'; ?>
+    <?php require_once '/templates/header.php'; ?>
     <div class="wrapper">
         <main>
         <section class="slogan">
@@ -30,17 +30,17 @@
             <button class="sub-btn" id="sub-btn">Подписаться</button>
             <script>
                 document.getElementById('sub-btn').addEventListener('click', function () {
-                    window.location.href = 'templates/register.php';
+                    window.location.href = '/register.php';
                 });
             </script>
         </div>
                 <!-- тут будет лента с карточками -->
         <div>
-                <a href="card.php">Карточка</a>
+                <a href="/card.php">Карточка</a>
         </div>
         </main>
     </div>
-    <?php require_once 'templates/footer.php'; ?>
+    <?php require_once '/templates/footer.php'; ?>
 
 
 </body>

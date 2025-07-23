@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['username'] = $username;
             $_SESSION['role'] = $role;
 
-            header('Location: index.php'); // или redirect куда нужно
+            header('Location: /index.php'); // или redirect куда нужно
             exit;
         }
     }
