@@ -1,10 +1,11 @@
 <?php
 session_start();
-// проверка на авторизацию с редиректом на форму авторизации если не авторизирован
-if (!isset($_SESSION['username']) || $_SESSION['username'] !== true) {
-    header('Location: /login.php'); 
+
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+    header('Location: /login.php');
     exit;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
