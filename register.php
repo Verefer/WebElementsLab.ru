@@ -26,15 +26,15 @@
             <form name="loginForm" onsubmit="return validateLogin()" method="post" action="../includes/register.php">
                 <div>
                     <label for="email">Почта:</label>
-                    <input type="text" name="login" id="login_field" autocapitalize="off" placeholder="Укажите вашу почту" autocorrect="off" autocomplete="username" class="form-control  js-login-field" autofocus="autofocus" required="required">
-                </div>
-                <div class="position-relative">
-                    <label for="password">Пароль:</label>
-                    <input type="password" name="password" id="password" autocomplete="current-password" required="required" placeholder="Сохраните ваш пароль">
+                    <input type="email" name="email" id="email" placeholder="Укажите вашу почту" autocomplete="email" required>
                 </div>
                 <div class="position-relative">
                     <label for="username">Имя пользователя:</label>
-                    <input type="text" name="username" id="username" required="required" placeholder="Придумайте уникальное имя пользователя">
+                    <input type="text" name="username" id="username" placeholder="Придумайте уникальное имя" autocomplete="username" required>
+                </div>
+                <div class="position-relative">
+                    <label for="password">Пароль:</label>
+                    <input type="password" name="password" id="password" placeholder="Придумайте пароль" autocomplete="new-password" required>
                 </div>
                 <label class="f-s-09rem d-flex a-i-center gap1">
                     <input type="checkbox" id="agree-privacy" name="agree-privacy" required="required">
