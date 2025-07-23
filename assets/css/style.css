@@ -39,13 +39,6 @@ a{
   border-radius: 0.5rem;
 }
 
-input[type='search'] {
-  padding: 0.4rem;
-  border-radius: 0.5rem;
-  border: none;
-  outline: none;
-}
-
 header{
   padding: 1rem 0;
   display: flex;
@@ -85,7 +78,7 @@ header{
     border-radius: 0.5rem;
 }
 
-.inp-sub {
+input[data-type="custom-email"] {
     height: 3rem;
     padding: 0 1rem;
     font-size: 1rem;
