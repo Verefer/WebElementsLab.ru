@@ -18,7 +18,7 @@
 
 </head>
 <body>
-    <?php require_once '/templates/header.php'; ?>
+    <?php require_once __DIR__ . '/templates/header.php'; ?>
     <div class="wrapper">
         <main>
         <section class="slogan">
@@ -40,7 +40,7 @@
         </div>
         </main>
     </div>
-    <?php require_once '/templates/footer.php'; ?>
+    <?php require_once __DIR__ . '/templates/footer.php'; ?>
 
 
 </body>
