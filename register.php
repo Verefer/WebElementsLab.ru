@@ -77,15 +77,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="form-error" style="color:red"><?= htmlspecialchars($error) ?></div>
             <?php endif; ?>
             <form name="loginForm" onsubmit="return validateLogin()" method="post">
-                <div>
-                    <label for="email">Почта:</label>
-                    <input type="text" name="email" id="email" placeholder="Укажите вашу почту" autocomplete="email" required>
-                    <span class="error-message" id="email-error">&nbsp;</span>
-                </div>
                 <div class="position-relative">
                     <label for="username">Имя пользователя:</label>
-                    <input type="text" name="username" id="username" placeholder="Придумайте уникальное имя" required>
+                    <input type="text" name="username" id="username" placeholder="Придумайте уникальное имя" autocomplete="off" required>
                     <span class="error-message" id="username-error">&nbsp;</span>
+                </div>    
+                <div>
+                    <label for="email">Почта:</label>
+                    <input type="text" name="email" id="email" placeholder="Укажите вашу почту" autocomplete="username" required>
+                    <span class="error-message" id="email-error">&nbsp;</span>
                 </div>
                 <div class="position-relative">
                     <label for="password">Пароль:</label>
