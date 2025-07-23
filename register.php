@@ -80,12 +80,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div>
                     <label for="email">Почта:</label>
                     <input type="text" name="email" id="email" placeholder="Укажите вашу почту" autocomplete="email" required>
-                    <div class="error-message" id="email-error"></div>
+                    <div class="error-message" id="email-error">&nbsp;</div>
                 </div>
                 <div class="position-relative">
                     <label for="username">Имя пользователя:</label>
                     <input type="text" name="username" id="username" placeholder="Придумайте уникальное имя" required>
-                    <div class="error-message" id="username-error"></div>
+                    <div class="error-message" id="username-error">&nbsp;</div>
                 </div>
                 <div class="position-relative">
                     <label for="password">Пароль:</label>
