@@ -41,7 +41,7 @@
         <div class="auth-footer">
             <div class="auth-down">
                 <p>Нет аккаунта?</p>
-                <a class="link-form" href="../templates/register.php">Создать аккаунт</a>
+                <a class="link-form" href="../register.php">Создать аккаунт</a>
             </div>
         </div>
         

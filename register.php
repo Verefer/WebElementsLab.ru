@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/img/favicon.ico" >
+    <link rel="icon" href="../assets/img/favicon.ico" >
     <meta name="theme-color" content="#000000" >
     <meta
       name="description"
       content="content">
-    <link rel="apple-touch-icon" href="assets/img/logo192.png" >
+    <link rel="apple-touch-icon" href="../assets/img/logo192.png" >
     <title>Регистрация | WebElementsLab</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -38,7 +38,7 @@
                 </div>
                 <label class="f-s-09rem d-flex a-i-center gap1">
                     <input type="checkbox" id="agree-privacy" name="agree-privacy" required="required">
-                    <p>Я согласен с <a class="link-form" href="../templates/privacy.php" target="_blank">политикой конфиденциальности</a></p>
+                    <p>Я согласен с <a class="link-form" href="../privacy.php" target="_blank">политикой конфиденциальности</a></p>
                 </label>
                 <label class="f-s-09rem d-flex a-i-center gap1">
                     <input type="checkbox" id="agree-mailing" name="agree-mailing" required="required" checked>
