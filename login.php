@@ -93,8 +93,14 @@ document.getElementById('login-form').addEventListener('submit', async function 
     hasError = true;
   }
 
-  if (hasError) return;
-
+  if (hasError) {
+      document.querySelectorAll('.input-field').forEach(field => {
+      field.classList.add('invalid', 'shake');
+      setTimeout(() => field.classList.remove('shake'), 300);
+    });
+    return;
+  }
+  
   const formData = new FormData(this);
 
   try {
@@ -125,8 +131,6 @@ document.getElementById('login-form').addEventListener('submit', async function 
   }
 });
 </script>
-
-
 </main>
 <?php require_once __DIR__ . '/templates/footer.php'; ?>
 </div>
