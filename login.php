@@ -14,6 +14,10 @@ if ($login === '' || $password === '') {
     // Поиск по email или username
     $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :login OR email = :login LIMIT 1");
     $stmt->execute(['login' => $login]);
+        var_dump($login);
+        var_dump(['login' => $login]);
+        exit;
+
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['password'])) {
