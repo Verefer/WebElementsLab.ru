@@ -38,6 +38,7 @@
         <div>
                 <a href="/card.php">Карточка</a>
         </div>
+         <h1 class="ldp-admin-title">Здравствуйте, <?= htmlspecialchars($_SESSION['username'] ?? 'Гость') ?></h1>
         </main>
     </div>
     <?php require_once __DIR__ . '/templates/footer.php'; ?>
