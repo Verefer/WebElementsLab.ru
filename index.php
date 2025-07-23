@@ -22,7 +22,7 @@
     <div class="wrapper">
         <main>
         <section class="slogan">
-            <h1>WebElementsLab — Готовые HTML, CSS и JS решения</h1>
+            <h1>WebElementsLab — <br>Готовые HTML, CSS и JS решения</h1><br>
             <h2>Подпишитесь на обновления и получайте свежие сниппеты первыми</h2>
         </section>
         <div class="sub-block">
