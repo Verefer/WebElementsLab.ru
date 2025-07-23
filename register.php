@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php if (!empty($error)): ?>
                 <div class="form-error" style="color:red"><?= htmlspecialchars($error) ?></div>
             <?php endif; ?>
-            <form name="loginForm" onsubmit="return validateLogin()" method="post" action="../includes/register.php">
+            <form name="loginForm" onsubmit="return validateLogin()" method="post">
                 <div>
                     <label for="email">Почта:</label>
                     <input type="text" name="email" id="email" placeholder="Укажите вашу почту" autocomplete="email" required>
