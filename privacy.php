@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <?php require_once 'includes/header.php'; ?>
+    <?php require_once 'templates/header.php'; ?>
     <div class="wrapper">
         <main class="gap1 d-flex f-d-column">
         <div class="d-flex a-i-center">
@@ -51,7 +51,7 @@
         </div>
     </main>
 </div>
-    <?php require_once 'includes/footer.php'; ?>
+    <?php require_once 'templates/footer.php'; ?>
 
 </body>
 </html>

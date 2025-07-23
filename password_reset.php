@@ -41,7 +41,7 @@
         </div>
     </div>
 </main>
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once 'templates/footer.php'; ?>
 </div>
 </body>
 </html>
