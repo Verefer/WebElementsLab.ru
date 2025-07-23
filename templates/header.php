@@ -8,6 +8,7 @@
         </div>
         <div class="nav-right">
         <?php if (isset($_SESSION['username'])): ?>
+            <h1 class="ldp-admin-title">Здравствуйте, <?= htmlspecialchars($_SESSION['username'] ?? 'Гость') ?></h1>
             <span>Привет, <?= htmlspecialchars($_SESSION['username']) ?></span>
             <a href="/logout.php" class="reg-btn anim-hover-box-shadow">Выход</a>
         <?php else: ?>
