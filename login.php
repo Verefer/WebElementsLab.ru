@@ -93,14 +93,9 @@ document.getElementById('login-form').addEventListener('submit', async function 
     hasError = true;
   }
 
-  if (hasError) {
-      document.querySelectorAll('.input-field').forEach(field => {
-      field.classList.add('invalid', 'shake');
-      setTimeout(() => field.classList.remove('shake'), 300);
-    });
-    return;
-  }
-  
+  if (hasError) return;
+
+
   const formData = new FormData(this);
 
   try {
