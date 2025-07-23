@@ -121,7 +121,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
     const formData = new FormData(this);
 
     try {
-        const response = await fetch('', {
+        const response = await fetch('/login.php', {
             method: 'POST',
             body: formData
         });
