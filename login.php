@@ -1,3 +1,35 @@
+<?php
+session_start();
+require_once __DIR__ . '/includes/db.php';
+
+$login = trim($_POST['login'] ?? '');
+$password = $_POST['password'] ?? '';
+
+// Подготовка ответа
+$errors = [];
+
+if ($login === '' || $password === '') {
+    $errors[] = 'Заполните все поля';
+} else {
+    // Поиск по email или username
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :login OR email = :login LIMIT 1");
+    $stmt->execute(['login' => $login]);
+    $user = $stmt->fetch();
+
+    if ($user && password_verify($password, $user['password'])) {
+        // Успешный вход
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['role'] = $user['role']; // Например: 'user', 'premium', 'admin'
+
+        header('Location: /dashboard.php');
+        exit;
+    } else {
+        $errors[] = 'Неверный логин или пароль';
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -27,11 +59,13 @@
                 <div>
                     <label for="email">Почта или имя пользователя:</label>
                     <input type="text" name="login" id="login_field" autocapitalize="off" autocorrect="off" autocomplete="username" class="form-control  js-login-field" autofocus="autofocus" required="required" placeholder="Ваша почта или имя пользователя">
+                    <span class="error-message" id="username-error">&nbsp;</span>
                 </div>
                 <div class="position-relative">
                     <label for="password">Пароль:</label>
                     <input type="password" name="password" id="password" class="form-control form-control js-password-field" autocomplete="current-password" required="required" placeholder="Введите ваш пароль">
                     <a class="label-link link-form position-absolute top-0 right-0" id="forgot-password" href="/password_reset.php">Забыли пароль?</a>
+                    <span class="error-message" id="password-error">&nbsp;</span>
                 </div>
                 <div>
                     <input type="submit" value="Войти">
@@ -48,7 +82,34 @@
         
     </div>
     
-    <script src="/assets/js/form_validation.js"></script>
+    <script>
+document.querySelector('form').addEventListener('submit', function (e) {
+    let loginField = document.getElementById('login_field');
+    let passwordField = document.getElementById('password');
+    let hasError = false;
+
+    // Очистка сообщений
+    document.getElementById('login-error').textContent = '\u00A0';
+    document.getElementById('password-error').textContent = '\u00A0';
+
+    // Проверка login/email
+    if (loginField.value.trim() === '') {
+        document.getElementById('login-error').textContent = 'Поле обязательно для заполнения';
+        hasError = true;
+    }
+
+    // Проверка пароля
+    if (passwordField.value.trim() === '') {
+        document.getElementById('password-error').textContent = 'Введите пароль';
+        hasError = true;
+    }
+
+    if (hasError) {
+        e.preventDefault(); // Останавливаем отправку формы
+    }
+});
+</script>
+
 </main>
 <?php require_once __DIR__ . '/templates/footer.php'; ?>
 </div>

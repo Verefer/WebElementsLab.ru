@@ -133,6 +133,7 @@ textarea {
   background-color: #ffffff00;
   color: #D1D7E0;
   border: 2px solid #8A80F2;
+  transition: border-color 0.2s ease;
 }
 
 input[type="submit"],
