@@ -8,7 +8,7 @@
         </div>
         <div class="nav-right">
         <?php if (isset($_SESSION['username'])): ?>
-            <span>Привет, <?= htmlspecialchars($_SESSION['username']) ?></span>
+            <span>Привет, <a href="/profile.php" <?= htmlspecialchars($_SESSION['username']) ?>></a></span>
             <a href="/logout.php" class="reg-btn anim-hover-box-shadow">Выход</a>
         <?php else: ?>
             <a href="/login.php">Вход</a>
