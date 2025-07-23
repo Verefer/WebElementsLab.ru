@@ -2,6 +2,8 @@
 session_start();
 require_once __DIR__ . '/includes/db.php';
 
+header('Content-Type: application/json'); // всегда JSON, так как это AJAX
+
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -20,18 +22,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } elseif (!password_verify($password, $user['password'])) {
             $errors[] = 'Пароль неверный';
         } else {
+            // авторизация успешна
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role'];
-            header('Location: /');
+
+            echo json_encode([
+                'success' => true,
+                'username' => $user['username']
+            ]);
             exit;
         }
     }
 
-    header('Content-Type: application/json');
-    echo json_encode(['errors' => $errors]);
+    // если были ошибки
+    echo json_encode([
+        'success' => false,
+        'errors' => $errors
+    ]);
     exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -88,7 +99,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
    <script>
-document.getElementById('login-form').addEventListener('submit', function(e) {
+document.getElementById('login-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
     let login = document.getElementById('login_field');
     let password = document.getElementById('password');
     let loginError = document.getElementById('login-error');
@@ -97,6 +110,7 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
     passwordError.textContent = '\u00A0';
     login.classList.remove('invalid');
     password.classList.remove('invalid');
+
     let hasError = false;
 
     if (login.value.trim() === '') {
@@ -109,7 +123,38 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
         passwordError.textContent = 'Введите пароль';
         hasError = true;
     }
+
+    if (hasError) return;
+
+    const formData = new FormData(this);
+
+    try {
+        const response = await fetch('/login.php', {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.errors && result.errors.length > 0) {
+            const errorText = result.errors[0].toLowerCase();
+
+            if (errorText.includes('почт')) {
+                login.classList.add('invalid');
+                loginError.textContent = result.errors[0];
+            } else if (errorText.includes('парол')) {
+                password.classList.add('invalid');
+                passwordError.textContent = result.errors[0];
+            }
+        } else {
+            // успех — редиректим
+            window.location.href = "/";
+        }
+    } catch (err) {
+        console.error('Ошибка при входе:', err);
+    }
 });
+
 </script>
 </main>
 <?php require_once __DIR__ . '/templates/footer.php'; ?>
