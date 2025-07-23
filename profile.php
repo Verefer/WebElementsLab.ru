@@ -1,7 +1,7 @@
 <?php
 session_start();
 // проверка на авторизацию с редиректом на форму авторизации если не авторизирован
-if (!isset($_SESSION['user_logged_in']) || $_SESSION['user_logged_in'] !== true) {
+if (!isset($_SESSION['username']) || $_SESSION['username'] !== true) {
     header('Location: /login.php'); 
     exit;
 }
@@ -38,7 +38,7 @@ if (!isset($_SESSION['user_logged_in']) || $_SESSION['user_logged_in'] !== true)
     <meta name="robots" content="noindex, follow">         — не индексировать, но переходить по ссылкам
 
     Совет: можно задать директивы только для конкретных ботов, например:
-    <meta name="googlebot" content="noindex, nofollow">-->
+    <meta name="googlebot" content="noindex, nofollow">  -->
     <meta name="robots" content="index, follow">
     <meta name="description" content="Профиль пользователя WebElementsLab">
     <link rel="apple-touch-icon" href="/assets/img/logo192.png" >

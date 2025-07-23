@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Проверка авторизации
-if (!empty($_SESSION['user_logged_in'])) {
+if (!empty($_SESSION['username'])) {
     header("Location: /profile.php"); 
     exit;
 }
