@@ -132,7 +132,7 @@ textarea {
   border-radius: 0.25rem;
   background-color: #ffffff00;
   color: #D1D7E0;
-  border: 1px solid #8A80F2;
+  border: 2px solid #8A80F2;
 }
 
 input[type="submit"],
@@ -174,12 +174,12 @@ textarea {
 
 
 input.valid {
-    border: 2px solid #4CAF50; /* зелёная обводка */
+    border-color:#4CAF50; 
     background-color: #ffffff00;
 }
 
 input.invalid {
-    border: 2px solid #F44336; /* красная обводка */
+    border-color:#F44336; 
     background-color: #ffffff00;
 }
 
