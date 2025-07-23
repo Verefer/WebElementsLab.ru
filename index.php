@@ -9,7 +9,7 @@
     <meta name="description" content="Библиотека сниппетов и UI-элементов на HTML, CSS и JS. Скачивайте, копируйте и используйте готовые решения для своих проектов.">
     <link rel="apple-touch-icon" href="assets/img/logo192.png" >
     <title>WebElementsLab — HTML, CSS и JS сниппеты для веб-разработчиков</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <meta property="og:title" content="WebElementsLab — HTML/CSS/JS элементы">
     <meta property="og:description" content="Готовые сниппеты и UI для твоих проектов.">
     <meta property="og:image" content="https://example.com/assets/img/social-preview.png">

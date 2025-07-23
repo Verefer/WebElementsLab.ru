@@ -10,7 +10,7 @@
       content="Политика конфиденциальности">
     <link rel="apple-touch-icon" href="assets/img/logo192.png" >
     <title>Политика конфиденциальности | WebElementsLab</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <?php require_once 'templates/header.php'; ?>

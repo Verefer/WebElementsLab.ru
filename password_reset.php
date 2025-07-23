@@ -8,7 +8,7 @@
     <meta name="description" content="Восстановление пароля">
     <link rel="apple-touch-icon" href="assets/img/logo192.png">
     <title>Восстановление пароля | WebElementsLab</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="wrapper">
