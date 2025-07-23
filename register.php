@@ -90,6 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="position-relative">
                     <label for="password">Пароль:</label>
                     <input type="password" name="password" id="password" placeholder="Придумайте пароль" autocomplete="new-password" required>
+                    <span id="password-error" class="form-error"></span>
                 </div>
                 <label class="f-s-09rem d-flex a-i-center gap1">
                     <input type="checkbox" id="agree-privacy" name="agree-privacy" required="required">
@@ -99,6 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="checkbox" id="agree-mailing" name="agree-mailing" checked>
                     <p>Получать уведомления об обновлениях</p>
                 </label>
+                <span id="general-error" class="form-error"></span>
                 <div>
                     <input type="submit" value="Зарегистрироваться">
                 </div>
