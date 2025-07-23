@@ -29,7 +29,7 @@ session_start();
             <h2>Подпишитесь на обновления и получайте свежие сниппеты первыми</h2>
         </section>
         <div class="sub-block">
-            <input class="inp-sub" type="email" data-type="custom-email" name="subcribeemail" id="subcribeemail" autocomplete="email" placeholder="Ваша почта...">
+            <input class="inp-sub" type="email" name="subcribeemail" id="subcribeemail" autocomplete="email" placeholder="Ваша почта...">
             <button class="sub-btn" id="sub-btn">Подписаться</button>
         </div>
 

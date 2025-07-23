@@ -369,7 +369,7 @@ footer{
   height: 20rem;
 }
 
-input[data-type="custom-email"] {
+input.inp-sub {
     height: 3rem;
     padding: 0 1rem;
     font-size: 1rem;
