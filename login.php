@@ -2,34 +2,30 @@
 session_start();
 require_once __DIR__ . '/includes/db.php';
 
-$login = trim($_POST['login'] ?? '');
+$email = trim($_POST['login'] ?? '');
 $password = $_POST['password'] ?? '';
 
 // Подготовка ответа
 $errors = [];
 
-if ($login === '' || $password === '') {
+if ($email === '' || $password === '') {
     $errors[] = 'Заполните все поля';
 } else {
-    // Поиск по email или username
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :login OR email = :login LIMIT 1");
-    $stmt->execute(['login' => $login]);
-        var_dump($login);
-        var_dump(['login' => $login]);
-        exit;
-
+    // Поиск только по email
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email LIMIT 1");
+    $stmt->execute(['email' => $email]);
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['password'])) {
         // Успешный вход
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
-        $_SESSION['role'] = $user['role']; // Например: 'user', 'premium', 'admin'
+        $_SESSION['role'] = $user['role'];
 
         header('Location: /dashboard.php');
         exit;
     } else {
-        $errors[] = 'Неверный логин или пароль';
+        $errors[] = 'Неверный email или пароль';
     }
 }
 ?>
@@ -61,9 +57,12 @@ if ($login === '' || $password === '') {
         <div class="auth-form">
             <form name="loginForm" onsubmit="return validateLogin()" method="post">
                 <div>
-                    <label for="email">Почта или имя пользователя:</label>
-                    <input type="text" name="login" id="login_field" autocapitalize="off" autocorrect="off" autocomplete="username" class="form-control  js-login-field" autofocus="autofocus" required="required" placeholder="Ваша почта или имя пользователя">
+                    <label for="email">Email:</label>
+                    <input type="text" name="login" id="login_field" autocapitalize="off" autocorrect="off" autocomplete="email"
+                        class="form-control js-login-field" autofocus="autofocus" required="required"
+                        placeholder="Ваш email">
                     <span class="error-message" id="login-error">&nbsp;</span>
+
                 </div>
                 <div class="position-relative">
                     <label for="password">Пароль:</label>
