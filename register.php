@@ -1,5 +1,10 @@
 <?php
 session_start();
+// Проверка авторизации
+if (!empty($_SESSION['user_logged_in'])) {
+    header('Location: /profile.php'); 
+    exit;
+}
 require_once __DIR__ . '/includes/db.php';
 
 ini_set('display_errors', 1);
