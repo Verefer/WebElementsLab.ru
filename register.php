@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="theme-color" content="#000000" >
     <meta
       name="description"
-      content="content">
+      content="Регистрация">
     <link rel="apple-touch-icon" href="/assets/img/logo192.png" >
     <title>Регистрация | WebElementsLab</title>
     <link rel="stylesheet" href="/assets/css/style.css">

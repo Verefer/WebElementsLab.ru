@@ -3,6 +3,7 @@ session_start();
 require_once __DIR__ . '/includes/db.php';
 
 $errors = [];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['login'] ?? '');
     $password = $_POST['password'] ?? '';
@@ -14,18 +15,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute(['email' => $email]);
         $user = $stmt->fetch();
 
-        if ($user && password_verify($password, $user['password'])) {
+        if (!$user) {
+            $errors[] = 'Пользователя с такой почтой нет';
+        } elseif (!password_verify($password, $user['password'])) {
+            $errors[] = 'Пароль неверный';
+        } else {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role'];
             header('Location: /');
             exit;
-        } else {
-            $errors[] = 'Неверный email или пароль';
         }
     }
 
-    // Отправка ошибок в формате JSON
     header('Content-Type: application/json');
     echo json_encode(['errors' => $errors]);
     exit;
@@ -37,7 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход | WebElementsLab</title>
+    <link rel="icon" href="/assets/img/favicon.ico" >
+    <meta name="theme-color" content="#000000" >
+    <meta
+      name="description"
+      content="Авторизация | WebElementsLab">
+    <link rel="apple-touch-icon" href="/assets/img/logo192.png" >
+    <title>Авторизация | WebElementsLab</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
@@ -80,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
    <script>
-    document.getElementById('login-form').addEventListener('submit', async function(e) {
+document.getElementById('login-form').addEventListener('submit', async function(e) {
     e.preventDefault();
 
     const login = document.getElementById('login_field');
@@ -88,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     const loginError = document.getElementById('login-error');
     const passwordError = document.getElementById('password-error');
 
-
+    // Очистка старых ошибок
     loginError.textContent = '\u00A0';
     passwordError.textContent = '\u00A0';
     login.classList.remove('valid', 'invalid');
@@ -112,20 +120,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     const formData = new FormData(this);
 
-    const response = await fetch('', {
-        method: 'POST',
-        body: formData
-    });
+    try {
+        const response = await fetch('', {
+            method: 'POST',
+            body: formData
+        });
 
-    const result = await response.json();
+        const result = await response.json();
 
-    if (result.errors && result.errors.length > 0) {
-        login.classList.add('invalid');
-        password.classList.add('invalid');
-        loginError.textContent = result.errors[0];
-        passwordError.textContent = result.errors[0];
-    } else {
-        window.location.href = '/';
+        if (result.errors && result.errors.length > 0) {
+            const errorText = result.errors[0].toLowerCase();
+
+            if (errorText.includes('почт')) {
+                login.classList.add('invalid');
+                loginError.textContent = result.errors[0];
+            } else if (errorText.includes('парол')) {
+                password.classList.add('invalid');
+                passwordError.textContent = result.errors[0];
+            } else {
+                // Общая ошибка
+                login.classList.add('invalid');
+                password.classList.add('invalid');
+                loginError.textContent = result.errors[0];
+                passwordError.textContent = result.errors[0];
+            }
+        } else {
+            // Успешный вход
+            window.location.href = '/';
+        }
+    } catch (error) {
+        console.error('Ошибка запроса:', error);
+        loginError.textContent = 'Произошла ошибка соединения';
     }
 });
 </script>
