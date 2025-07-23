@@ -30,7 +30,7 @@
             <button class="sub-btn" id="sub-btn">Подписаться</button>
             <script>
                 document.getElementById('sub-btn').addEventListener('click', function () {
-                    window.location.href = 'register.php';
+                    window.location.href = 'templates/register.php';
                 });
             </script>
         </div>

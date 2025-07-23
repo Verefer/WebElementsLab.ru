@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/img/favicon.ico" >
+    <link rel="icon" href="../assets/img/favicon.ico" >
     <meta name="theme-color" content="#000000" >
     <meta
       name="description"
       content="content">
-    <link rel="apple-touch-icon" href="assets/img/logo192.png" >
+    <link rel="apple-touch-icon" href="../assets/img/logo192.png" >
     <title>Вход | WebElementsLab</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 <div class="wrapper">
@@ -18,7 +18,7 @@
     <div class="authentication ">
         <div class="auth-text-up">
             <a href="index.php">
-                <img src="assets/img/logo.svg" alt="logo" class="auth-logo">
+                <img src="../assets/img/logo.svg" alt="logo" class="auth-logo">
             </a>
             <h1>Войти</h1>
         </div>
@@ -41,16 +41,16 @@
         <div class="auth-footer">
             <div class="auth-down">
                 <p>Нет аккаунта?</p>
-                <a class="link-form" href="register.php">Создать аккаунт</a>
+                <a class="link-form" href="../templates/register.php">Создать аккаунт</a>
             </div>
         </div>
         
         
     </div>
     
-    <script src="assets/js/form_validation.js"></script>
+    <script src="../assets/js/form_validation.js"></script>
 </main>
-<?php require_once 'templates/footer.php'; ?>
+<?php require_once '../templates/footer.php'; ?>
 </div>
 </body>
 </html>

@@ -10,7 +10,7 @@
       content="content">
     <link rel="apple-touch-icon" href="assets/img/logo192.png" >
     <title>Регистрация | WebElementsLab</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 <div class="wrapper">
@@ -20,7 +20,10 @@
             <h1>Регистрация</h1>
         </div>
         <div class="auth-form">
-            <form name="loginForm" onsubmit="return validateLogin()" method="post">
+            <?php if (!empty($error)): ?>
+                <div class="form-error" style="color:red"><?= htmlspecialchars($error) ?></div>
+            <?php endif; ?>
+            <form name="loginForm" onsubmit="return validateLogin()" method="post" action="../includes/register.php">
                 <div>
                     <label for="email">Почта:</label>
                     <input type="text" name="login" id="login_field" autocapitalize="off" placeholder="Укажите вашу почту" autocorrect="off" autocomplete="username" class="form-control  js-login-field" autofocus="autofocus" required="required">
@@ -35,7 +38,7 @@
                 </div>
                 <label class="f-s-09rem d-flex a-i-center gap1">
                     <input type="checkbox" id="agree-privacy" name="agree-privacy" required="required">
-                    <p>Я согласен с <a class="link-form" href="privacy.php" target="_blank">политикой конфиденциальности</a></p>
+                    <p>Я согласен с <a class="link-form" href="../templates/privacy.php" target="_blank">политикой конфиденциальности</a></p>
                 </label>
                 <label class="f-s-09rem d-flex a-i-center gap1">
                     <input type="checkbox" id="agree-mailing" name="agree-mailing" required="required" checked>
@@ -49,16 +52,16 @@
         <div class="auth-footer">
             <div class="auth-down">
                 <p>Есть аккаунт?</p>
-                <a class="link-form" href="login.php">Войти</a>
+                <a class="link-form" href="../templates/login.php">Войти</a>
             </div>
         </div>
         
         
     </div>
     
-    <script src="assets/js/form_validation.js"></script>
+
 </main>
-<?php require_once 'templates/footer.php'; ?>
+<?php require_once '../templates/footer.php'; ?>
 </div>
 </body>
 </html>
