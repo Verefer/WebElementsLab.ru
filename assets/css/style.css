@@ -78,16 +78,7 @@ header{
     border-radius: 0.5rem;
 }
 
-input[data-type="custom-email"] {
-    height: 3rem;
-    padding: 0 1rem;
-    font-size: 1rem;
-    border: 1px solid #D1D7E0;
-    border-right: none;
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
-    outline: none;
-}
+
 
 .sub-btn {
     height: 3rem;
@@ -376,4 +367,15 @@ footer{
   border: 3px white solid;
   width: 45rem;
   height: 20rem;
+}
+
+input[data-type="custom-email"] {
+    height: 3rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    border: 1px solid #D1D7E0;
+    border-right: none;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    outline: none;
 }
