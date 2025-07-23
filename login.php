@@ -53,10 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="auth-form">
             <form id="login-form" method="post" novalidate>
                 <div>
-                    <label for="login_field">Email:</label>
+                    <label for="login_field">Почта:</label>
                     <input type="text" name="login" id="login_field" autocomplete="email"
-                           class="form-control" placeholder="Ваш email">
-                    <span class="error-message" id="login-error">&nbsp;</span>
+                           class="form-control" placeholder="Ваша почта">
+                           <span class="error-message" id="login-error">&nbsp;</span>
                 </div>
                 <div class="position-relative">
                     <label for="password">Пароль:</label>
@@ -79,51 +79,56 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 
-    <script>
+   <script>
     document.getElementById('login-form').addEventListener('submit', async function(e) {
-        e.preventDefault();
+    e.preventDefault();
 
-        const login = document.getElementById('login_field');
-        const password = document.getElementById('password');
-        const loginError = document.getElementById('login-error');
-        const passwordError = document.getElementById('password-error');
+    const login = document.getElementById('login_field');
+    const password = document.getElementById('password');
+    const loginError = document.getElementById('login-error');
+    const passwordError = document.getElementById('password-error');
 
-        loginError.textContent = '\u00A0';
-        passwordError.textContent = '\u00A0';
 
-        let hasError = false;
+    loginError.textContent = '\u00A0';
+    passwordError.textContent = '\u00A0';
+    login.classList.remove('valid', 'invalid');
+    password.classList.remove('valid', 'invalid');
 
-        if (login.value.trim() === '') {
-            loginError.textContent = 'Поле обязательно для заполнения';
-            hasError = true;
-        }
+    let hasError = false;
 
-        if (password.value.trim() === '') {
-            passwordError.textContent = 'Введите пароль';
-            hasError = true;
-        }
+    if (login.value.trim() === '') {
+        login.classList.add('invalid');
+        loginError.textContent = 'Укажите вашу почту';
+        hasError = true;
+    }
 
-        if (hasError) return;
+    if (password.value.trim() === '') {
+        password.classList.add('invalid');
+        passwordError.textContent = 'Введите пароль';
+        hasError = true;
+    }
 
-        const formData = new FormData(this);
+    if (hasError) return;
 
-        const response = await fetch('', {
-            method: 'POST',
-            body: formData
-        });
+    const formData = new FormData(this);
 
-        const result = await response.json();
-
-        if (result.errors && result.errors.length > 0) {
-            if (result.errors[0].includes('email') || result.errors[0].includes('пароль')) {
-                loginError.textContent = result.errors[0];
-                passwordError.textContent = result.errors[0];
-            }
-        } else {
-            window.location.href = '/';
-        }
+    const response = await fetch('', {
+        method: 'POST',
+        body: formData
     });
-    </script>
+
+    const result = await response.json();
+
+    if (result.errors && result.errors.length > 0) {
+        login.classList.add('invalid');
+        password.classList.add('invalid');
+        loginError.textContent = result.errors[0];
+        passwordError.textContent = result.errors[0];
+    } else {
+        window.location.href = '/';
+    }
+});
+</script>
 </main>
 <?php require_once __DIR__ . '/templates/footer.php'; ?>
 </div>
