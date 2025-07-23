@@ -41,7 +41,7 @@
         </main>
     </div>
     <?php require_once 'templates/footer.php'; ?>
-    <?php echo password_hash('9Su-nYm-cTj-iWx', PASSWORD_DEFAULT); ?>
+
 
 </body>
 </html>
