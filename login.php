@@ -26,7 +26,7 @@
             <div>
                 <label for="login_field">Почта:</label>
                 <input
-                    type="text"
+                    type="email"
                     name="login"
                     id="login_field"
                     autocomplete="email"

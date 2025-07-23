@@ -29,14 +29,22 @@ session_start();
             <h2>Подпишитесь на обновления и получайте свежие сниппеты первыми</h2>
         </section>
         <div class="sub-block">
-            <input type="email" name="subcribeemail" id="subcribeemail" placeholder="Ваша почта...">
+            <input class="inp-sub" type="email" name="subcribeemail" id="subcribeemail" placeholder="Ваша почта...">
             <button class="sub-btn" id="sub-btn">Подписаться</button>
-            <script>
-                document.getElementById('sub-btn').addEventListener('click', function () {
-                    window.location.href = '/register.php';
-                });
-            </script>
         </div>
+
+        <script>
+            document.getElementById('sub-btn').addEventListener('click', function () {
+                const email = document.getElementById('subcribeemail').value.trim();
+
+                if (email !== '') {
+                    const encodedEmail = encodeURIComponent(email);
+                    window.location.href = `/register.php?email=${encodedEmail}`;
+                } else {
+                    alert('Введите почту перед подпиской!');
+                }
+            });
+        </script>
                 <!-- тут будет лента с карточками -->
         <div>
                 <a href="/card.php">Карточка</a>

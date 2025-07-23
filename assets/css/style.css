@@ -85,7 +85,7 @@ header{
     border-radius: 0.5rem;
 }
 
-input[type='email'] {
+.inp-sub {
     height: 3rem;
     padding: 0 1rem;
     font-size: 1rem;
@@ -125,6 +125,7 @@ label {
 
 input[type="text"],
 input[type="password"],
+input[type='email'],
 textarea {
   width: 100%; 
   padding: 0.8rem;

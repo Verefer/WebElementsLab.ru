@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>    
                 <div>
                     <label for="email">Почта:</label>
-                    <input type="text" name="email" id="email" placeholder="Укажите вашу почту" autocomplete="username" required>
+                    <input type="email" name="email" id="email" value="<?= htmlspecialchars($_GET['email'] ?? '') ?>" placeholder="Укажите вашу почту" autocomplete="username" required>
                     <span class="error-message" id="email-error">&nbsp;</span>
                 </div>
                 <div class="position-relative">
