@@ -98,6 +98,7 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
     login.classList.remove('invalid');
     password.classList.remove('invalid');
     let hasError = false;
+
     if (login.value.trim() === '') {
         login.classList.add('invalid');
         loginError.textContent = 'Укажите вашу почту';
@@ -108,10 +109,6 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
         passwordError.textContent = 'Введите пароль';
         hasError = true;
     }
-    if (hasError) {
-        e.preventDefault();
-    }
-    const formData = new FormData(this);
 });
 </script>
 </main>
