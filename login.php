@@ -88,70 +88,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
    <script>
-document.getElementById('login-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    const login = document.getElementById('login_field');
-    const password = document.getElementById('password');
-    const loginError = document.getElementById('login-error');
-    const passwordError = document.getElementById('password-error');
-
-    // Очистка старых ошибок
+document.getElementById('login-form').addEventListener('submit', function(e) {
+    let login = document.getElementById('login_field');
+    let password = document.getElementById('password');
+    let loginError = document.getElementById('login-error');
+    let passwordError = document.getElementById('password-error');
     loginError.textContent = '\u00A0';
     passwordError.textContent = '\u00A0';
-    login.classList.remove('valid', 'invalid');
-    password.classList.remove('valid', 'invalid');
-
+    login.classList.remove('invalid');
+    password.classList.remove('invalid');
     let hasError = false;
-
     if (login.value.trim() === '') {
         login.classList.add('invalid');
         loginError.textContent = 'Укажите вашу почту';
         hasError = true;
     }
-
     if (password.value.trim() === '') {
         password.classList.add('invalid');
         passwordError.textContent = 'Введите пароль';
         hasError = true;
     }
-
-    if (hasError) return;
-
-    const formData = new FormData(this);
-
-    try {
-        const response = await fetch('/login.php', {
-            method: 'POST',
-            body: formData
-        });
-
-        const result = await response.json();
-
-        if (result.errors && result.errors.length > 0) {
-            const errorText = result.errors[0].toLowerCase();
-
-            if (errorText.includes('почт')) {
-                login.classList.add('invalid');
-                loginError.textContent = result.errors[0];
-            } else if (errorText.includes('парол')) {
-                password.classList.add('invalid');
-                passwordError.textContent = result.errors[0];
-            } else {
-                // Общая ошибка
-                login.classList.add('invalid');
-                password.classList.add('invalid');
-                loginError.textContent = result.errors[0];
-                passwordError.textContent = result.errors[0];
-            }
-        } else {
-            // Успешный вход
-            window.location.href = '/';
-        }
-    } catch (error) {
-        console.error('Ошибка запроса:', error);
-        loginError.textContent = 'Произошла ошибка соединения';
+    if (hasError) {
+        e.preventDefault();
     }
+    const formData = new FormData(this);
 });
 </script>
 </main>
