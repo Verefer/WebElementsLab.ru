@@ -72,7 +72,7 @@ $tags = explode(',', $snippet['tag'] ?? '');
                         <?= $is_favorite ? '💖 В избранном' : '🤍 В избранное' ?>
                     </button>
                 <?php endif; ?>
-                    <div class="d-flex block-tag a-i-center">
+                    <div class="block-tag">
                         <?php foreach ($tags as $tag): ?>
                             <span class="tag-pill"><?= htmlspecialchars(trim($tag)) ?></span>
                         <?php endforeach; ?>
