@@ -338,6 +338,7 @@ footer{
 }
 
 .btn-card{
+  background-color: #ffffff00;
   color: white;
   padding: 0.4rem 1.2rem;
   border: 1px white solid;
