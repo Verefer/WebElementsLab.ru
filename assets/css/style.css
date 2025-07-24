@@ -386,15 +386,13 @@ input.inp-sub {
   font-weight: bold;
 }
 .tab-content {
-  border: 2px #4f5e86 solid;
   position: relative;
-  width: 100%;
-  min-height: 20rem;
   height: auto;
   display: none;
   margin-top: 10px;
 }
 .tab-content.active {
+  margin: 0;
   display: block;
 }
 .preview-frame {
@@ -408,4 +406,11 @@ input.inp-sub {
   top: 0;
   right: 0;
   z-index: 10;
+}
+
+pre[class*=language-] {
+  margin: 0;
+  border: 2px #4f5e86 solid;
+  min-height: 20rem;
+  width: 45rem;
 }
