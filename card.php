@@ -71,8 +71,7 @@ $tags = explode(',', $snippet['tag'] ?? '');
                     <button class="btn-card j-c-center d-flex" id="fav-btn" data-id="<?= $snippet['id'] ?>">
                         <?= $is_favorite ? '💖 В избранном' : '🤍 В избранное' ?>
                     </button>
-                <?php else: ?>    
-                
+                <?php endif; ?>
                     <div class="d-flex block-tag a-i-center">
                         <?php foreach ($tags as $tag): ?>
                             <span class="tag-pill"><?= htmlspecialchars(trim($tag)) ?></span>
