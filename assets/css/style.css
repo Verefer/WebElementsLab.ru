@@ -426,3 +426,7 @@ pre[class*=language-] {
   margin-right: 0.25rem;
   margin-bottom: 0.25rem;
 }
+
+.block-tag{
+  max-width: 10rem;
+}
