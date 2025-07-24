@@ -109,9 +109,11 @@ document.getElementById('login-form').addEventListener('submit', async function 
 
   try {
     const response = await fetch('/hundlers/login_handler.php', {
-      method: 'POST',
-      body: formData,
-    });
+    method: 'POST',
+    body: formData,
+    credentials: 'include', // ← обязательно!
+  });
+
 
     const result = await response.json();
 

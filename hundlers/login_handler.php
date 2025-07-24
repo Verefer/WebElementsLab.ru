@@ -6,7 +6,7 @@ header('Content-Type: application/json');
 
 $errors = [];
 $MAX_ATTEMPTS = 5;
-$BLOCK_TIME = 60; // в секундах
+$BLOCK_TIME = 30; // в секундах
 
 // 1. Защита от перебора (через $_SESSION)
 if (!isset($_SESSION['login_attempts'])) {

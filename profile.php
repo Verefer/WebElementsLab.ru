@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+if (empty($_SESSION['id'])) {
     header('Location: /login.php');
     exit;
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
