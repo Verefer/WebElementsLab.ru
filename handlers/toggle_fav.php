@@ -1,4 +1,5 @@
 <?php
+$start = microtime(true);
 session_start();
 require_once __DIR__ . '/../includes/db.php';
 
@@ -29,3 +30,5 @@ if ($exists) {
     $add->execute([$user_id, $snippet_id]);
     echo json_encode(['status' => 'added']);
 }
+error_log('⏱ Время выполнения: ' . round(microtime(true) - $start, 3) . ' сек');
+

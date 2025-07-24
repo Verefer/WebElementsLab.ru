@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/includes/db.php'; // если ещё не подключал
+require_once __DIR__ . '/includes/db.php';
 
 $id = $_GET['id'] ?? 1;
 
@@ -11,13 +11,17 @@ $snippet = $stmt->fetch();
 if (!$snippet) {
     die('Сниппет не найден');
 }
-$is_favorite = false;
 
+$is_favorite = false;
 if (!empty($_SESSION['id'])) {
-    $stmtFav = $pdo->prepare("SELECT COUNT(*) FROM favorites WHERE id = ? AND snippet_id = ?");
-    $stmtFav->execute([$_SESSION['id'], $snippet['id']]);
-    $is_favorite = $stmtFav->fetchColumn() > 0;
+    $user_id = $_SESSION['id'];
+    $snippet_id = $snippet['id'];
+
+    $stmt = $pdo->prepare("SELECT 1 FROM favorites WHERE user_id = ? AND snippet_id = ?");
+    $stmt->execute([$user_id, $snippet_id]);
+    $is_favorite = $stmt->fetch() ? true : false;
 }
+
 $tags = explode(',', $snippet['tag'] ?? '');
 
 ?>
