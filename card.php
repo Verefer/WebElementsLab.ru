@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/db.php'; // если ещё не подклю�
 
 $id = $_GET['id'] ?? 1;
 
-$stmt = $pdo->prepare("SELECT s.*, u.username FROM snippets s JOIN users u ON s.id_user = u.id WHERE s.id_card = ?");
+$stmt = $pdo->prepare("SELECT s.*, u.username FROM snippets s JOIN users u ON s.id_user = u.id WHERE s.id = ?");
 $stmt->execute([$id]);
 $snippet = $stmt->fetch();
 
