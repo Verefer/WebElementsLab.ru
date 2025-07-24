@@ -11,7 +11,13 @@ $snippet = $stmt->fetch();
 if (!$snippet) {
     die('Сниппет не найден');
 }
+$is_favorite = false;
 
+if (!empty($_SESSION['user_id'])) {
+    $stmtFav = $pdo->prepare("SELECT COUNT(*) FROM favorites WHERE user_id = ? AND snippet_id = ?");
+    $stmtFav->execute([$_SESSION['user_id'], $snippet['id_card']]);
+    $is_favorite = $stmtFav->fetchColumn() > 0;
+}
 $tags = explode(',', $snippet['tag'] ?? '');
 
 ?>
@@ -57,6 +63,10 @@ $tags = explode(',', $snippet['tag'] ?? '');
                     <script><?= $snippet['js'] ?></script>
                 </div>
                 <div class="tags d-flex gap05 wrap">
+                    <button class="btn-card j-c-center d-flex" id="fav-btn" data-id="<?= $snippet['id_card'] ?>">
+                    <?= $is_favorite ? '💖 В избранном' : '🤍 В избранное' ?>
+                    </button>
+
                     <?php foreach ($tags as $tag): ?>
                         <span class="tag-pill"><?= htmlspecialchars(trim($tag)) ?></span>
                     <?php endforeach; ?>
