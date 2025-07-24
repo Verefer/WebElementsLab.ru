@@ -345,7 +345,7 @@ footer{
 }
 
 .block-element{
-  border: 3px white solid;
+  border: 1px white solid;
   width: 10rem;
   height: 10rem;
   display: flex;
@@ -357,8 +357,6 @@ footer{
   min-height: 20rem;
   height: auto;
 }
-
-
 
 input.inp-sub {
   margin-bottom: 0rem;
@@ -410,7 +408,21 @@ input.inp-sub {
 
 pre[class*=language-] {
   margin: 0 !important;
-  border: 2px #4f5e86 solid;
   min-height: 20rem;
   width: 45rem;
+}
+
+.tags {
+  flex-wrap: wrap;
+}
+
+.tag-pill {
+  display: inline-block;
+  background: #eee;
+  color: #333;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
 }
