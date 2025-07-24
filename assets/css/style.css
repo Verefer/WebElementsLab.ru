@@ -338,14 +338,19 @@ footer{
 }
 
 .btn-card{
-  background-color: #ffffff00;
+  background-color: transparent;
   color: white;
   padding: 0.4rem 1.2rem;
   border: 1px white solid;
   border-radius: 50em;
   cursor: pointer;
-  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
-  box-shadow 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transform-origin: center;
+  will-change: transform;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s ease;
   box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
 }
 
