@@ -108,7 +108,7 @@ document.getElementById('login-form').addEventListener('submit', async function 
   const formData = new FormData(this);
 
   try {
-    const response = await fetch('/handlers/login_handler.php', {
+    const response = await fetch('/hundlers/login_handler.php', {
       method: 'POST',
       body: formData,
     });
