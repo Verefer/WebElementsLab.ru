@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/db.php'; // если ещё не подклю�
 
 $id = $_GET['id'] ?? 1;
 
-$stmt = $pdo->prepare("SELECT s.*, u.username FROM snippets s JOIN users u ON s.id_user = u.id WHERE s.id = ?");
+$stmt = $pdo->prepare("SELECT s.*, u.username FROM snippets s JOIN users u ON s.user_id = u.id WHERE s.id = ?");
 $stmt->execute([$id]);
 $snippet = $stmt->fetch();
 
@@ -13,9 +13,9 @@ if (!$snippet) {
 }
 $is_favorite = false;
 
-if (!empty($_SESSION['user_id'])) {
-    $stmtFav = $pdo->prepare("SELECT COUNT(*) FROM favorites WHERE user_id = ? AND snippet_id = ?");
-    $stmtFav->execute([$_SESSION['user_id'], $snippet['id']]);
+if (!empty($_SESSION['id'])) {
+    $stmtFav = $pdo->prepare("SELECT COUNT(*) FROM favorites WHERE id = ? AND snippet_id = ?");
+    $stmtFav->execute([$_SESSION['id'], $snippet['id']]);
     $is_favorite = $stmtFav->fetchColumn() > 0;
 }
 $tags = explode(',', $snippet['tag'] ?? '');
