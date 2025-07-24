@@ -32,13 +32,50 @@
                 </div>
             </div>
             <div class="block-code">
-                <p>Сюда как-то реализовать код</p>
+                <div class="tabs d-flex gap05">
+                    <button class="tab-btn active" data-tab="html">HTML</button>
+                    <button class="tab-btn" data-tab="css">CSS</button>
+                    <button class="tab-btn" data-tab="js">JS</button>
+                    <button class="tab-btn" data-tab="preview">Preview</button>
+                </div>
+
+                <div class="tab-content active" id="html">
+                    <pre><code class="language-html">&lt;a class="btn" href="#"&gt;BUTTON&lt;/a&gt;</code></pre>
+                </div>
+                <div class="tab-content" id="css">
+                    <pre><code class="language-css">.btn { background: #000; color: #fff; padding: 0.5em 1em; }</code></pre>
+                </div>
+                <div class="tab-content" id="js">
+                    <pre><code class="language-js">document.querySelector('.btn').onclick = () => alert('Нажато');</code></pre>
+                </div>
+                <div class="tab-content" id="preview">
+                    <iframe class="preview-frame" srcdoc="
+                    &lt;style&gt;.btn { background: #000; color: #fff; padding: 0.5em 1em; }&lt;/style&gt;
+                    &lt;a class='btn' href='#'&gt;BUTTON&lt;/a&gt;
+                    &lt;script&gt;document.querySelector('.btn').onclick = () => alert('Нажато');&lt;/script&gt;
+                    "></iframe>
+                </div>
             </div>
+
         </div>
         <div>
             <p>Короткая информация с ссылками на то как подключать стили</p>
         </div>
     </div>
+    <script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const id = btn.dataset.tab;
+        document.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.toggle('active', content.id === id);
+        });
+        });
+    });
+    </script>
+
 </main>
 <?php require_once __DIR__ . '/templates/footer.php'; ?>
 </div>
