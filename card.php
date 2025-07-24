@@ -3,7 +3,6 @@ session_start();
 require_once __DIR__ . '/includes/db.php'; // если ещё не подключал
 
 $id = $_GET['id'] ?? 1;
-$tags = explode(',', $snippet['tag']);
 
 $stmt = $pdo->prepare("SELECT s.*, u.username FROM snippets s JOIN users u ON s.id_user = u.id WHERE s.id_card = ?");
 $stmt->execute([$id]);
@@ -12,6 +11,8 @@ $snippet = $stmt->fetch();
 if (!$snippet) {
     die('Сниппет не найден');
 }
+
+$tags = explode(',', $snippet['tag']);
 ?>
 
 <!DOCTYPE html>
