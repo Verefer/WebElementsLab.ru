@@ -352,26 +352,13 @@ footer{
 }
 
 .block-code{
-  position: relative;
-  padding-top: 3rem;
-  border: 3px white solid;
+  max-width: 45rem;
   width: 45rem;
-  height: 20rem;
+  min-height: 20rem;
+  height: auto;
 }
 
-.tabs {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3rem; 
-  display: flex;
-  gap: 0.5rem;
-  background: #333; 
-  padding: 0.5rem;
-  box-sizing: border-box;
-  z-index: 10; 
-}
+
 
 input.inp-sub {
   margin-bottom: 0rem;
@@ -395,13 +382,15 @@ input.inp-sub {
   cursor: pointer;
 }
 .tab-btn.active {
-  background: #ddd;
+  background: #93a1b1;
   font-weight: bold;
 }
 .tab-content {
+  border: 2px #4f5e86 solid;
   position: relative;
   width: 100%;
-  height: 100%;
+  min-height: 20rem;
+  height: auto;
   display: none;
   margin-top: 10px;
 }
@@ -416,7 +405,7 @@ input.inp-sub {
 
 .copy-btn{
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 0;
   z-index: 10;
 }
