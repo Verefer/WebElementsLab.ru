@@ -50,13 +50,10 @@
                 <div class="tab-content" id="js">
                 <pre><code class="language-js">document.querySelector('.btn').onclick = () => alert('Нажато');</code></pre>
                 </div>
+            </div> 
+            <div>
+                <p>Короткая информация с ссылками на то как подключать стили</p>
             </div>
-            </div>
-
-
-        </div>
-        <div>
-            <p>Короткая информация с ссылками на то как подключать стили</p>
         </div>
     </div>
     <script>
