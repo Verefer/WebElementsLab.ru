@@ -12,7 +12,8 @@ if (!$snippet) {
     die('Сниппет не найден');
 }
 
-$tags = explode(',', $snippet['tag']);
+$tags = explode(',', $snippet['tag'] ?? '');
+
 ?>
 
 <!DOCTYPE html>
