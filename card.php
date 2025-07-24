@@ -1,3 +1,18 @@
+<?php
+session_start();
+require_once __DIR__ . '/includes/db.php'; // если ещё не подключал
+
+$id = $_GET['id'] ?? 1;
+
+$stmt = $pdo->prepare("SELECT s.*, u.username FROM snippets s JOIN users u ON s.id_user = u.id WHERE s.id_card = ?");
+$stmt->execute([$id]);
+$snippet = $stmt->fetch();
+
+if (!$snippet) {
+    die('Сниппет не найден');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -9,8 +24,17 @@
       name="description"
       content="content">
     <link rel="apple-touch-icon" href="/assets/img/logo192.png" >
-    <title>Переменная | WebElementsLab</title>
+    <title><?= htmlspecialchars($snippet['name']) ?> | WebElementsLab</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Prism CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <!-- Prism JS -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js" defer></script>
+    <!-- Языки -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js" defer></script>
+
 </head>
 <body>
 <div class="wrapper">
@@ -18,14 +42,16 @@
 <main>
     <div class="d-flex gap1 card-page f-d-column">
         <div class="d-flex j-c-space-between">
-            <h2>Название</h2>
-            <h2>Автор</h2>
+        <h2><?= htmlspecialchars($snippet['name']) ?></h2>
+        <h2><?= htmlspecialchars($snippet['username']) ?></h2>
         </div>
         <div class="f-d-row d-flex gap1">
             <!-- Preview -->
             <div class="left-card-page d-flex gap1 f-d-column">
                 <div class="block-element d-flex j-c-center a-i-center">
-                <a class="btn" href="#">BUTTON</a> <!-- Живой результат -->
+                    <?= $snippet['html'] ?>
+                    <style><?= $snippet['css'] ?></style>
+                    <script><?= $snippet['js'] ?></script>
                 </div>
                 <div class="d-flex gap1 f-d-column">
                 <a class="btn-card j-c-center d-flex" href="#">Избранное</a>
@@ -42,13 +68,16 @@
                 </div>
 
                 <div class="tab-content active" id="html">
-                <pre><code class="language-html">&lt;a class="btn" href="#"&gt;BUTTON&lt;/a&gt;</code></pre>
+                    <button class="copy-btn">Копировать</button>
+                    <pre><code class="language-html"><?= htmlspecialchars($snippet['html']) ?></code></pre>
                 </div>
                 <div class="tab-content" id="css">
-                <pre><code class="language-css">.btn { background: #000; color: #fff; padding: 0.5em 1em; }</code></pre>
+                    <button class="copy-btn">Копировать</button>
+                    <pre><code class="language-css"><?= htmlspecialchars($snippet['css']) ?></code></pre>
                 </div>
                 <div class="tab-content" id="js">
-                <pre><code class="language-js">document.querySelector('.btn').onclick = () => alert('Нажато');</code></pre>
+                    <button class="copy-btn">Копировать</button>
+                    <pre><code class="language-js"><?= htmlspecialchars($snippet['js']) ?></code></pre>
                 </div>
             </div>   
         </div>
@@ -73,5 +102,6 @@
 </main>
 <?php require_once __DIR__ . '/templates/footer.php'; ?>
 </div>
+<script src="/assets/js/snippet.js" defer></script>
 </body>
 </html>
