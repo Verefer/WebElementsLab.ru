@@ -64,7 +64,7 @@ $tags = explode(',', $snippet['tag'] ?? '');
                 </div>
                 <div class="tags d-flex gap05 wrap f-d-column gap1">
                     <button class="btn-card j-c-center d-flex" id="fav-btn" data-id="<?= $snippet['id'] ?>">
-                    <?= $is_favorite ? '💖 В избранном' : '🤍 В избранное' ?>
+                        <?= $is_favorite ? '💖 В избранном' : '🤍 В избранное' ?>
                     </button>
                     <div class="d-flex block-tag a-i-center">
                         <?php foreach ($tags as $tag): ?>
