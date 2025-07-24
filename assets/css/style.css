@@ -409,7 +409,7 @@ input.inp-sub {
 }
 
 pre[class*=language-] {
-  margin: 0;
+  margin: 0 !important;
   border: 2px #4f5e86 solid;
   min-height: 20rem;
   width: 45rem;
