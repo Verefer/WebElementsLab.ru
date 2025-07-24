@@ -62,7 +62,7 @@ $tags = explode(',', $snippet['tag'] ?? '');
                     <style><?= $snippet['css'] ?></style>
                     <script><?= $snippet['js'] ?></script>
                 </div>
-                <div class="tags d-flex gap05 wrap f-d-column">
+                <div class="tags d-flex gap05 wrap f-d-column gap1">
                     <button class="btn-card j-c-center d-flex" id="fav-btn" data-id="<?= $snippet['id'] ?>">
                     <?= $is_favorite ? '💖 В избранном' : '🤍 В избранное' ?>
                     </button>
