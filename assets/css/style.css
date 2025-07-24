@@ -343,7 +343,14 @@ footer{
   padding: 0.4rem 1.2rem;
   border: 1px white solid;
   border-radius: 50em;
+  cursor: pointer;
+  transition: transform 0.1s ease;
 }
+
+.btn-card:active {
+  transform: scale(0.95);
+}
+
 
 .block-element{
   border: 1px white solid;
