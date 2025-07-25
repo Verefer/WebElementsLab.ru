@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			const text = codeBlock.textContent;
 			navigator.clipboard.writeText(text).then(() => {
 				btn.textContent = '✓ Скопировано';
-				setTimeout(() => (btn.textContent = '📋 Копировать'), 1500);
+				setTimeout(() => (btn.textContent = 'Копировать'), 1500);
 			});
 		});
 	});
