@@ -66,6 +66,19 @@ document.addEventListener('DOMContentLoaded', function () {
 			<!DOCTYPE html>
 			<html>
 			<head>
+				<style>
+					html, body {
+						height: 100%;
+						margin: 0;
+						padding: 0;
+					}
+					body {
+						min-height: 100vh;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+				</style>
 				<style>${window.snippetPreviewData.css}</style>
 			</head>
 			<body>
