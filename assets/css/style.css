@@ -460,7 +460,7 @@ pre[class*=language-] {
 .guide-main h1 {
     margin-bottom: 1.1rem;
     font-size: 2em;
-    color: #222;
+    color: #2a7ae2;
 }
 .guide-main h2 {
     margin-top: 1.5rem;
@@ -500,6 +500,5 @@ a {
 }
 a:hover {
     color: #0056b3;
-    background: #eaf4ff;
     text-decoration: none;
 }
