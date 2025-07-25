@@ -1,0 +1,10 @@
+.block-main {
+	max-width: 50rem;
+	margin: 0 auto;
+	border: 2px solid #fff;
+	border-radius: 12px;
+	box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+	padding: 2rem 1.5rem;
+	font-size: 1.1em;
+	align-items: normal;
+}

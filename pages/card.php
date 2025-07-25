@@ -110,7 +110,7 @@ $tags = explode(',', $snippet['tag'] ?? '');
         </div>
         <div>
             <p>
-                Как правильно подключать CSS и JS? Подробнее — в <a href="/guide.php" target="_blank">гайде по подключению стилей и скриптов</a>.<br>
+                Как правильно подключать CSS и JS? Подробнее — в <a href="/pages/guide.php" target="_blank">гайде по подключению стилей и скриптов</a>.<br>
                 В инструкции: примеры подключения через <code>&lt;link&gt;</code> и <code>&lt;script&gt;</code>, а также варианты вставки кода прямо в HTML-файл.
             </p>
         </div>

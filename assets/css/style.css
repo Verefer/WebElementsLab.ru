@@ -7,6 +7,7 @@
 @import url('./layout/_header.css');
 @import url('./layout/_main.css');
 @import url('./layout/_footer.css');
+@import url('./layout/_block-main.css');
 
 /* === Components === */
 @import url('./components/_anim.css');

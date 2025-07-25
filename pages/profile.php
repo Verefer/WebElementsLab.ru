@@ -67,7 +67,7 @@ $profile = $stmt->fetch();
     <?php require_once __DIR__ . '/../templates/header.php'; ?>
     <div class="wrapper">
         <main>
-        <section class="profile-card">
+        <section class="block-main">
             <div class="profile-avatar">
                 <img src="<?= $profile['avatar_url'] ?? '/assets/img/default-avatar.png' ?>" alt="Аватар" />
             </div>
