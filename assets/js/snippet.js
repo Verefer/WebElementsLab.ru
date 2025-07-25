@@ -24,20 +24,16 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
   });
 });
 
-document.getElementById('fav-btn')?.addEventListener('click', async (e) => {
-  const btn = e.currentTarget;
-  const id = btn.dataset.id;
-
-  const res = await fetch('/handlers/toggle_fav.php', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({ id })
-  });
-
-  const data = await res.json();
-  if (data.status === 'added') {
-    btn.textContent = '💖 В избранном';
-  } else if (data.status === 'removed') {
-    btn.textContent = '🤍 В избранное';
+document.addEventListener('DOMContentLoaded', function() {
+  const favBtn = document.getElementById('fav-btn');
+  if (favBtn) {
+    favBtn.addEventListener('click', function() {
+      favBtn.classList.toggle('fav');
+      if (favBtn.classList.contains('fav')) {
+        favBtn.textContent = '💖 В избранном';
+      } else {
+        favBtn.textContent = '🤍 В избранное';
+      }
+    });
   }
 });
