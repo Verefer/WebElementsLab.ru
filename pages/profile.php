@@ -83,6 +83,12 @@ $profile = $stmt->fetch();
                 <a href="/pages/logout.php" class="reg-btn anim-hover-box-shadow">Выход</a>
             </div>
         </section>
+            <script>
+                document.querySelectorAll('.profile-social').forEach(btn => {
+                btn.addEventListener('mouseup', e => btn.blur());
+                btn.addEventListener('mouseleave', e => btn.blur());
+                });
+            </script>
         </main>
     </div>
     <?php require_once __DIR__ . '/../templates/footer.php'; ?>
