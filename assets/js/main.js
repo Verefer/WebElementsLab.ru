@@ -2,7 +2,7 @@ document.getElementById('sub-btn').addEventListener('click', function () {
     const email = document.getElementById('subcribeemail').value.trim();
     if (email !== '') {
         const encodedEmail = encodeURIComponent(email);
-        window.location.href = `/register.php?email=${encodedEmail}`;
+        window.location.href = `/pages/register.php?email=${encodedEmail}`;
     } else {
         alert('Введите почту перед подпиской!');
     }
@@ -19,7 +19,7 @@ function loadSnippets() {
             const list = document.getElementById('snippets-list');
             data.forEach(snippet => {
                 const a = document.createElement('a');
-                a.href = `/card.php?id=${snippet.id}`;
+                a.href = `/pages/card.php?id=${snippet.id}`;
                 a.textContent = snippet.name;
                 a.className = 'snippet-link';
                 list.appendChild(a);

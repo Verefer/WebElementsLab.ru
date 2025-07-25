@@ -2,7 +2,7 @@
 session_start();
 
 if (empty($_SESSION['id'])) {
-    header('Location: /login.php');
+    header('Location: /pages/login.php');
     exit;
 }
 ?>
@@ -53,15 +53,15 @@ if (empty($_SESSION['id'])) {
 
 </head>
 <body>
-    <?php require_once __DIR__ . '/templates/header.php'; ?>
+    <?php require_once __DIR__ . '/../templates/header.php'; ?>
     <div class="wrapper">
         <main>
         <h1>Профиль <?= htmlspecialchars($_SESSION['username'] ?? 'Гость') ?></h1>
         <h2>Дизайн ещё не разработан</h2>
-        <a href="/logout.php" class="reg-btn anim-hover-box-shadow">Выход</a>
+        <a href="/pages/logout.php" class="reg-btn anim-hover-box-shadow">Выход</a>
         </main>
     </div>
-    <?php require_once __DIR__ . '/templates/footer.php'; ?>
+    <?php require_once __DIR__ . '/../templates/footer.php'; ?>
 
 
 </body>

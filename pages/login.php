@@ -2,7 +2,7 @@
 session_start();
 // Проверка авторизации
 if (!empty($_SESSION['username'])) {
-    header("Location: /profile.php"); 
+    header("Location: /pages/profile.php"); 
     exit;
 }
 ?>
@@ -25,7 +25,7 @@ if (!empty($_SESSION['username'])) {
 
 <div class="authentication">
     <div class="auth-text-up">
-        <a href="index.php">
+        <a href="/">
             <img src="/assets/img/logo.svg" alt="logo" class="auth-logo" />
         </a>
         <h1>Войти</h1>
@@ -56,7 +56,7 @@ if (!empty($_SESSION['username'])) {
                 />
                 <a
                     class="label-link link-form position-absolute top-0 right-0"
-                    href="/password_reset.php"
+                    href="/pages/password_reset.php"
                     >Забыли пароль?</a
                 >
                 <span class="error-message" id="password-error">&nbsp;</span>
@@ -69,7 +69,7 @@ if (!empty($_SESSION['username'])) {
     <div class="auth-footer">
         <div class="auth-down">
             <p>Нет аккаунта?</p>
-            <a class="link-form" href="/register.php">Создать аккаунт</a>
+            <a class="link-form" href="/pages/register.php">Создать аккаунт</a>
         </div>
     </div>
 </div>

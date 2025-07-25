@@ -16,7 +16,7 @@ session_start();
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <?php require_once __DIR__ . '/templates/header.php'; ?>
+    <?php require_once __DIR__ . '/../templates/header.php'; ?>
     <div class="wrapper">
         <main class="gap1 d-flex f-d-column">
         <div class="d-flex a-i-center">
@@ -54,6 +54,6 @@ session_start();
         </div>
     </main>
 </div>
-<?php require_once __DIR__ . '/templates/footer.php'; ?>
+<?php require_once __DIR__ . '/../templates/footer.php'; ?>
 </body>
 </html>

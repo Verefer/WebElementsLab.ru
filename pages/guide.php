@@ -17,12 +17,12 @@
     <meta property="og:title" content="Гайд: как подключать CSS и JS">
     <meta property="og:description" content="Подробная инструкция по подключению стилей и скриптов в HTML. Внутренние и внешние способы, советы и примеры.">
     <meta property="og:image" content="https://webelementslab.ru/assets/img/logo512.png">
-    <meta property="og:url" content="https://webelementslab.ru/guide.php">
+    <meta property="og:url" content="https://webelementslab.ru/pages/guide.php">
     <meta property="og:type" content="article">
 </head>
 <body>
 <div class="wrapper">
-<?php require_once __DIR__ . '/templates/header.php'; ?>
+<?php require_once __DIR__ . '/../templates/header.php'; ?>
 <main class="guide-main">
     <h1>Гайд: как правильно подключать CSS и JS</h1>
     <p>В этом гайде вы узнаете, как подключать стили и скрипты к вашему проекту:</p>
@@ -48,7 +48,7 @@ console.log('Hello!');
     </ul>
     <p>Больше примеров и советов — на <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/link" target="_blank">MDN</a>.</p>
 </main>
-<?php require_once __DIR__ . '/templates/footer.php'; ?>
+<?php require_once __DIR__ . '/../templates/footer.php'; ?>
 </div>
 </body>
 </html>

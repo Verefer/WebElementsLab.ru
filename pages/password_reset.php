@@ -15,7 +15,7 @@
 <main>
     <div class="authentication">
         <div class="auth-text-up">
-            <a href="/index.php">
+            <a href="/">
                 <img src="/assets/img/logo.svg" alt="logo" class="auth-logo">
             </a>
             <h1>Восстановление пароля</h1>
@@ -37,12 +37,12 @@
 
         <div class="auth-footer">
             <div class="auth-down">
-                <a class="link-form" href="/login.php">← Вернуться ко входу</a>
+                <a class="link-form" href="/pages/login.php">← Вернуться ко входу</a>
             </div>
         </div>
     </div>
 </main>
-<?php require_once __DIR__ . '/templates/footer.php'; ?>
+<?php require_once __DIR__ . '/../templates/footer.php'; ?>
 </div>
 <script>
 document.getElementById('passwordResetForm').addEventListener('submit', function(e) {

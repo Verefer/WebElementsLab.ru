@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $expires = date('Y-m-d H:i:s', strtotime('+1 hour'));
     $stmt = $pdo->prepare('INSERT INTO password_resets (user_id, token, expires_at) VALUES (?, ?, ?)');
     $stmt->execute([$user['id'], $token, $expires]);
-    $reset_link = 'https://webelementslab.ru/password_reset_confirm.php?token=' . $token;
+    $reset_link = 'https://webelementslab.ru/pages/password_reset.php?token=' . $token;
     // Здесь должен быть реальный отправщик почты
     // mail($email, 'Восстановление пароля', "Ссылка для сброса пароля: $reset_link");
     echo json_encode(['success' => true, 'message' => 'Ссылка для восстановления отправлена на почту']);

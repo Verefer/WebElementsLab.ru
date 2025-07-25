@@ -2,10 +2,10 @@
 session_start();
 // Проверка авторизации
 if (!empty($_SESSION['username'])) {
-    header('Location: /profile.php'); 
+    header('Location: /pages/profile.php'); 
     exit;
 }
-require_once __DIR__ . '/includes/db.php';
+require_once __DIR__ . '/../includes/db.php';
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['username'] = $username;
             $_SESSION['role'] = $role;
 
-            header('Location: /index.php');
+            header('Location: /');
             exit;
         }
     }

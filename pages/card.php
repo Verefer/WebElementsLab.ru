@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/includes/db.php';
+require_once __DIR__ . '/../includes/db.php';
 
 $id = $_GET['id'] ?? 1;
 
@@ -56,7 +56,7 @@ $tags = explode(',', $snippet['tag'] ?? '');
 </head>
 <body>
 <div class="wrapper">
-<?php require_once __DIR__ . '/templates/header.php'; ?>
+<?php require_once __DIR__ . '/../templates/header.php'; ?>
 <main>
     <div class="d-flex gap1 card-page f-d-column">
         <div class="d-flex j-c-space-between">

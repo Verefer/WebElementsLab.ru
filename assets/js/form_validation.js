@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function checkField(field, value, element) {
-        fetch(`/check_field.php?field=${field}&value=${encodeURIComponent(value)}`)
+        fetch(`/pages/check_field.php?field=${field}&value=${encodeURIComponent(value)}`)
             .then(res => res.json())
             .then(data => {
                 element.classList.remove('valid', 'invalid');
