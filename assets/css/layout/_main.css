@@ -1,27 +1,27 @@
 /* Стили для основного контента и слогана */
-.slogan{
-    color: #D1D7E0;
-    margin-top: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.slogan {
+	color: #d1d7e0;
+	margin-top: 4rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-.slogan h1{
-    font-size: 3rem;
-    text-align: center;
+.slogan h1 {
+	font-size: 3rem;
+	text-align: center;
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    padding-bottom: 2rem;
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+	margin: 2rem auto;
 }
 
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }

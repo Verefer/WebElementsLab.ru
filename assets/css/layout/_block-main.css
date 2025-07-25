@@ -1,6 +1,7 @@
 .block-main {
-	max-width: 50rem;
-	margin: 0 auto;
+	min-width: 60rem;
+	max-width: 60rem;
+	margin: 2rem auto;
 	border: 2px solid #fff;
 	border-radius: 12px;
 	box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);

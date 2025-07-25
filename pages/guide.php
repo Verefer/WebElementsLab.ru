@@ -1,5 +1,5 @@
 <?php
-// guide.php — страница с инструкцией по подключению CSS и JS
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -23,7 +23,7 @@
 <body>
 <div class="wrapper">
 <?php require_once __DIR__ . '/../templates/header.php'; ?>
-<main class="block-main">
+<main class="block-main guide-main">
     <h1>Гайд: как правильно подключать CSS и JS</h1>
     <p>В этом гайде вы узнаете, как подключать стили и скрипты к вашему проекту:</p>
     <h2>1. Внешнее подключение CSS</h2>
