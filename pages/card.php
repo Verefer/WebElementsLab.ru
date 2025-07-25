@@ -93,15 +93,15 @@ $tags = explode(',', $snippet['tag'] ?? '');
                 </div>
 
                 <div class="tab-content active" id="html">
-                    <button class="copy-btn">📋 Копировать</button>
+                    <button class="copy-btn">Копировать</button>
                     <pre><code class="language-html"><?= htmlspecialchars($snippet['html'] ?? '') ?></code></pre>
                 </div>
                 <div class="tab-content" id="css">
-                    <button class="copy-btn">📋 Копировать</button>
+                    <button class="copy-btn">Копировать</button>
                     <pre><code class="language-css"><?= htmlspecialchars($snippet['css'] ?? '') ?></code></pre>
                 </div>
                 <div class="tab-content" id="js">
-                    <button class="copy-btn">📋 Копировать</button>
+                    <button class="copy-btn">Копировать</button>
                     <pre><code class="language-js"><?= htmlspecialchars($snippet['js'] ?? '') ?></code></pre>
                 </div>
             </div>   
