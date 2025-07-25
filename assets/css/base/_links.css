@@ -1,0 +1,10 @@
+/* Стили для всех ссылок на сайте */
+a {
+    color: #2a7ae2;
+    text-decoration: underline;
+    transition: color 0.2s, background 0.2s;
+}
+a:hover {
+    color: #0056b3;
+    text-decoration: none;
+}

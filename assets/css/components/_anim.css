@@ -1,0 +1,8 @@
+/* Анимации и эффекты наведения */
+.anim-hover-box-shadow{
+  transition: all 0.3s;
+}
+
+.anim-hover-box-shadow:hover{
+  box-shadow: 0 0 1rem rgba(139, 193, 255, 0.5);
+}

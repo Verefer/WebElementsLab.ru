@@ -1,0 +1,22 @@
+/* Утилиты flexbox и выравнивания */
+.d-flex{
+  display: flex;
+}
+.a-i-center{
+  align-items: center;
+}
+.j-c-center{
+  justify-content: center;
+}
+.j-c-space-between{
+  justify-content: space-between;
+}
+.f-d-column{
+  flex-direction: column;
+}
+.f-d-row{
+  flex-direction: row;
+}
+.gap1{
+  gap: 1rem;
+}

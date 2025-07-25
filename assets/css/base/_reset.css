@@ -1,0 +1,13 @@
+/* Базовые сбросы и глобальные стили */
+* {
+  box-sizing: border-box;
+}
+h1, p, h2{
+  margin: 0;
+  padding: 0;
+}
+body{
+    margin: 0;
+    font-size: 16px;
+    color: #D1D7E0;
+}

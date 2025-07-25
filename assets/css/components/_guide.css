@@ -1,0 +1,46 @@
+/* Стили для блока guide-main и его элементов */
+.guide-main {
+    max-width: 50rem;
+    margin: 0 auto;
+    border:2px solid #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 2rem 1.5rem;
+    font-size: 1.1em;
+    align-items: normal;
+}
+.guide-main h1 {
+    margin-bottom: 1.1rem;
+    font-size: 2em;
+    color: #2a7ae2;
+}
+.guide-main h2 {
+    margin-top: 1.5rem;
+    color: #2a7ae2;
+    font-size: 1.2em;
+}
+.guide-main pre {
+    background: #252525;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 1em;
+    margin-bottom: 12px;
+    overflow-x: auto;
+}
+.guide-main ul {
+    margin: 16px 0;
+    padding-left: 22px;
+}
+.guide-main li {
+    margin-bottom: 8px;
+}
+.guide-main a {
+    color: #2a7ae2;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.guide-main a:hover {
+    color: #0056b3;
+    background: #eaf4ff;
+    text-decoration: none;
+}

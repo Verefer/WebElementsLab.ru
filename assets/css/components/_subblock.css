@@ -1,0 +1,25 @@
+/* Стили для блока sub-block и input.inp-sub */
+.sub-block {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content; 
+    box-shadow: 0 0 1.5rem rgba(139, 193, 255, 0.5);
+    border-radius: 0.5rem;
+}
+
+input.inp-sub {
+  margin-bottom: 0rem;
+  height: 3rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  background-color: #27272756;
+  border: 1px solid #D1D7E0;
+  border-right: none;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  outline: none;
+}

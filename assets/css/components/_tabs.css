@@ -1,0 +1,26 @@
+/* Стили для табов и превью */
+.tab-btn {
+  padding: 6px 12px;
+  border: none;
+  background: #93a1b1;
+  cursor: pointer;
+}
+.tab-btn.active {
+  background: #eee;
+  font-weight: bold;
+}
+.tab-content {
+  position: relative;
+  height: auto;
+  display: none;
+  margin-top: 10px;
+}
+.tab-content.active {
+  margin: 0;
+  display: block;
+}
+.preview-frame {
+  width: 100%;
+  height: 150px;
+  border: 1px solid #ccc;
+}

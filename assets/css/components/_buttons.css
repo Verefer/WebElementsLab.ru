@@ -1,0 +1,81 @@
+/* Стили для кнопок */
+input[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.reg-btn{
+  padding: 0.4rem 1.2rem;
+  border: 1px white solid;
+  border-radius: 0.5rem;
+}
+
+.sub-btn {
+    height: 3rem;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    background-color: #0077ff;
+    color: #D1D7E0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.sub-btn:hover {
+    background-color: #005fcc;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #013d50;
+  color: #D1D7E0;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #015872;
+}
+
+.btn-card{
+  background-color: transparent;
+  color: white;
+  padding: 0.4rem 1.2rem;
+  border: 0.0625rem white solid;
+  border-radius: 50em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transform-origin: center;
+  height: 2.25rem;
+  will-change: transform;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease, border-color 0.2s;
+  box-shadow: 0 0.2rem 0.9rem rgba(255, 255, 255, 0.2);
+}
+
+.btn-card:active {
+  transform: scale(0.93);
+  box-shadow: 0 0.1rem 0.4rem rgba(255, 255, 255, 0.1);
+}
+
+.btn-card:hover{
+  box-shadow: 0.2rem 0 0.9rem rgba(255, 255, 255, 0.2);
+}
+
+.btn-card.fav {
+  border-color: #ff4c4c !important;
+  color: #ff4c4c;
+}

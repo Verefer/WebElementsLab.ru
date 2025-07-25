@@ -1,0 +1,10 @@
+/* Стили для футера */
+footer{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+    padding: 1.5rem;
+    background-color: #0b0b22;
+}
