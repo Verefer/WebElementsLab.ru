@@ -40,7 +40,7 @@
 	width: 32px;
 	height: 32px;
 	display: inline-block;
-	background: #232a3a;
+	background: #313131;
 	border-radius: 50%;
 	transition: box-shadow 0.22s, background 0.22s, transform 0.18s;
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
@@ -73,14 +73,14 @@
 }
 .profile-social:hover,
 .profile-social:focus {
-	background: #2a7ae2;
-	box-shadow: 0 4px 16px rgba(42, 122, 226, 0.22),
+	background: #ffffff;
+	box-shadow: 0 4px 16px rgba(231, 232, 235, 0.22),
 		0 1.5px 8px rgba(0, 0, 0, 0.13);
 	transform: scale(1.12);
 	outline: none;
 }
 .profile-social:active {
-	background: #174a8c;
-	box-shadow: 0 2px 8px rgba(42, 122, 226, 0.18);
+	background: #9c9c9c;
+	box-shadow: 0 2px 8px rgba(150, 154, 158, 0.18);
 	transform: scale(0.96);
 }

@@ -1,45 +1,58 @@
 /* Стили для кнопки копирования */
 .copy-btn {
-	display: inline-flex;
+	position: absolute;
+	top: 0.7em;
+	right: 0.7em;
+	z-index: 2;
+	display: flex;
 	align-items: center;
-	gap: 0.5em;
-	padding: 0.5em 1.2em;
-	background: linear-gradient(90deg, #4f8cff 0%, #2356c7 100%);
-	color: #fff;
-	border: none;
+	justify-content: center;
+	width: 2.2em;
+	height: 2.2em;
+	padding: 0;
+	background: rgba(255, 255, 255, 0.85);
+	color: #2356c7;
+	border: 1.5px solid #e0e6ef;
 	border-radius: 6px;
-	font-size: 1em;
+	font-size: 1.1em;
 	font-family: inherit;
 	font-weight: 500;
 	cursor: pointer;
-	box-shadow: 0 2px 8px rgba(79, 140, 255, 0.08);
-	transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+	box-shadow: 0 2px 8px rgba(79, 140, 255, 0.04);
+	transition: background 0.18s, box-shadow 0.18s, color 0.18s, border 0.18s;
 	outline: none;
-	margin-bottom: 0.5em;
+	margin: 0;
 }
 .copy-btn:hover,
 .copy-btn:focus {
-	background: linear-gradient(90deg, #2356c7 0%, #4f8cff 100%);
-	box-shadow: 0 4px 16px rgba(79, 140, 255, 0.15);
-	transform: translateY(-2px) scale(1.04);
+	background: #f3f7ff;
+	color: #4f8cff;
+	border-color: #b3c6e6;
+	box-shadow: 0 4px 16px rgba(79, 140, 255, 0.1);
 }
 .copy-btn:active {
-	background: #2356c7;
-	transform: scale(0.98);
+	background: #e0e6ef;
+	color: #2356c7;
 }
 .copy-btn::before {
-	content: '';
-	display: inline-block;
-	width: 1.1em;
-	height: 1.1em;
-	margin-right: 0.4em;
-	background: url('/assets/img/logo.svg') no-repeat center/contain;
-	opacity: 0.7;
-	vertical-align: middle;
+	content: '\1F4CB'; /* 📋 emoji as icon */
+	font-size: 1.2em;
+	margin-right: 0;
+	display: block;
+}
+.copy-btn span {
+	display: none;
 }
 @media (max-width: 600px) {
 	.copy-btn {
-		font-size: 0.95em;
-		padding: 0.45em 1em;
+		width: 2em;
+		height: 2em;
+		font-size: 1em;
+		top: 0.5em;
+		right: 0.5em;
 	}
+}
+/* Для корректного позиционирования внутри pre/code */
+.tab-content {
+	position: relative;
 }
