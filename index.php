@@ -9,12 +9,13 @@ session_start();
     <link rel="icon" href="/assets/img/favicon.ico" >
     <meta name="theme-color" content="#000000" >
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Библиотека сниппетов и UI-элементов на HTML, CSS и JS. Скачивайте, копируйте и используйте готовые решения для своих проектов.">
+    <meta name="description" content="WebElementsLab — большая библиотека сниппетов, UI-элементов и готовых решений на HTML, CSS и JavaScript для веб-разработчиков. Копируйте, скачивайте и внедряйте лучшие примеры для своих проектов!">
+    <meta name="keywords" content="HTML, CSS, JS, сниппеты, UI, веб-разработка, компоненты, примеры, шаблоны, frontend, элементы, дизайн, код, WebElementsLab">
     <link rel="apple-touch-icon" href="/assets/img/logo192.png" >
-    <title>WebElementsLab — HTML, CSS и JS сниппеты для веб-разработчиков</title>
+    <title>WebElementsLab — лучшие HTML, CSS и JS сниппеты для веб-разработчиков</title>
     <link rel="stylesheet" href="/assets/css/style.css">
-    <meta property="og:title" content="WebElementsLab — HTML/CSS/JS элементы">
-    <meta property="og:description" content="Готовые сниппеты и UI для твоих проектов.">
+    <meta property="og:title" content="WebElementsLab — лучшие сниппеты и UI-элементы для веба">
+    <meta property="og:description" content="Библиотека сниппетов, UI и компонентов для современных сайтов. Быстрое внедрение, удобный поиск, свежие решения для разработчиков.">
     <meta property="og:image" content="https://webelementslab.ru/assets/img/logo512.png">
     <meta property="og:url" content="https://webelementslab.ru/">
     <meta property="og:type" content="website">
