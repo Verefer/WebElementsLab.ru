@@ -23,7 +23,7 @@
         </div>
 
         <div class="auth-form">
-            <form name="passwordResetForm" method="post">
+            <form name="passwordResetForm" method="post" id="passwordResetForm">
                 <div>
                     <label for="email">Электронная почта:</label>
                     <input type="text" name="email" id="email" required="required" class="form-control" placeholder="Введите вашу почту">
@@ -32,6 +32,7 @@
                     <input type="submit" value="Отправить ссылку для восстановления">
                 </div>
             </form>
+            <div id="reset-message" class="reset-message"></div>
         </div>
 
         <div class="auth-footer">
@@ -43,5 +44,27 @@
 </main>
 <?php require_once __DIR__ . '/templates/footer.php'; ?>
 </div>
+<script>
+document.getElementById('passwordResetForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    fetch('/handlers/password_reset_handler.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: 'email=' + encodeURIComponent(email)
+    })
+    .then(res => res.json())
+    .then(data => {
+        const msg = document.getElementById('reset-message');
+        msg.textContent = data.message;
+        msg.style.color = data.success ? 'green' : 'red';
+    })
+    .catch(() => {
+        const msg = document.getElementById('reset-message');
+        msg.textContent = 'Ошибка отправки запроса';
+        msg.style.color = 'red';
+    });
+});
+</script>
 </body>
 </html>
