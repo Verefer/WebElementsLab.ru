@@ -67,9 +67,7 @@ $tags = explode(',', $snippet['tag'] ?? '');
             <!-- Preview -->
             <div class="left-card-page d-flex gap1 f-d-column">
                 <div class="block-element d-flex j-c-center a-i-center">
-                    <?= $snippet['html'] ?>
-                    <style><?= $snippet['css'] ?></style>
-                    <script><?= $snippet['js'] ?></script>
+                    <iframe id="snippet-frame" style="width:100%;min-height:200px;border:none;"></iframe>
                 </div>
                 <div class="tags d-flex gap05 wrap f-d-column gap1">
                 <?php if (isset($_SESSION['username'])): ?>
@@ -115,23 +113,16 @@ $tags = explode(',', $snippet['tag'] ?? '');
             </p>
         </div>
     </div>
-    <script>
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const id = btn.dataset.tab;
-        document.querySelectorAll('.tab-content').forEach(content => {
-            content.classList.toggle('active', content.id === id);
-        });
-        });
-    });
-    </script>
-
 </main>
 <?php require_once __DIR__ . '/../templates/footer.php'; ?>
 </div>
+<script>
+window.snippetPreviewData = {
+    html: <?= json_encode($snippet['html']) ?>,
+    css: <?= json_encode($snippet['css']) ?>,
+    js: <?= json_encode($snippet['js']) ?>
+};
+</script>
 <script src="/assets/js/snippet.js" defer></script>
 </body>
 </html>
