@@ -61,8 +61,9 @@ if (!empty($_SESSION['username'])) {
                 >
                 <span class="error-message" id="password-error">&nbsp;</span>
             </div>
-            <div>
-                <input type="submit" value="Войти" />
+            <div class="button-with-spinner">
+                <input type="submit" value="Войти" id="submit-button" />
+                <div class="spinner" id="login-spinner"></div>
             </div>
         </form>
     </div>
@@ -82,6 +83,8 @@ document.getElementById('login-form').addEventListener('submit', async function 
   let password = document.getElementById('password');
   let loginError = document.getElementById('login-error');
   let passwordError = document.getElementById('password-error');
+  let submitButton = document.getElementById('submit-button');
+  let spinner = document.getElementById('login-spinner');
 
   // Сброс ошибок
   loginError.textContent = '\u00A0';
@@ -106,6 +109,10 @@ document.getElementById('login-form').addEventListener('submit', async function 
 
 
   const formData = new FormData(this);
+
+  // Показываем спиннер и блокируем кнопку
+  submitButton.disabled = true;
+  spinner.style.display = 'block';
 
   try {
     const response = await fetch('/handlers/login_handler.php', {
@@ -134,6 +141,13 @@ document.getElementById('login-form').addEventListener('submit', async function 
     }
   } catch (err) {
     console.error('Ошибка при входе:', err);
+  } finally {
+    // Скрываем спиннер и разблокируем кнопку только если произошла ошибка
+    // В случае успешного входа пользователь будет перенаправлен
+    if (!result?.success) {
+      submitButton.disabled = false;
+      spinner.style.display = 'none';
+    }
   }
 });
 </script>

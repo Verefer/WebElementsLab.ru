@@ -7,6 +7,32 @@ body{
     color: #D1D7E0;
 }
 
+.spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    to {transform: rotate(360deg);}
+}
+
+.button-with-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
 h1, p, h2{
   margin: 0;
   padding: 0;
