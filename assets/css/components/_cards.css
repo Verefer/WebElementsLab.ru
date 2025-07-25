@@ -1,46 +1,51 @@
 /* Стили для карточек и блоков */
-.block-element{
-  border: 0.0625rem white solid;
-  width: 14rem;
-  height: 14rem;
-  display: flex;
+.block-element {
+	border: 0.0625rem white solid;
+	width: 14rem;
+	height: 14rem;
+	display: flex;
 }
 
-.block-code{
-  max-width: 45rem;
-  width: 45rem;
-  min-height: 20rem;
-  height: auto;
+.block-code {
+	max-width: 45rem;
+	width: 45rem;
+	min-height: 20rem;
+	height: auto;
 }
 
-.btn-card{
-  background-color: transparent;
-  color: white;
-  padding: 0.4rem 1.2rem;
-  border: 0.0625rem white solid;
-  border-radius: 50em;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  transform-origin: center;
-  height: 2.25rem;
-  will-change: transform;
-  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease, border-color 0.2s;
-  box-shadow: 0 0.2rem 0.9rem rgba(255, 255, 255, 0.2);
+.btn-card {
+	background-color: transparent;
+	color: white;
+	padding: 0.4rem 1.2rem;
+	border: 0.0625rem white solid;
+	border-radius: 50em;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+	transform-origin: center;
+	height: 2.25rem;
+	will-change: transform;
+	transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 0.25s ease, border-color 0.2s;
+	box-shadow: 0 0.2rem 0.9rem rgba(255, 255, 255, 0.2);
 }
 
 .btn-card:active {
-  transform: scale(0.93);
-  box-shadow: 0 0.1rem 0.4rem rgba(255, 255, 255, 0.1);
+	transform: scale(0.93);
+	box-shadow: 0 0.1rem 0.4rem rgba(255, 255, 255, 0.1);
 }
 
-.btn-card:hover{
-  box-shadow: 0.2rem 0 0.9rem rgba(255, 255, 255, 0.2);
+.btn-card:hover {
+	box-shadow: 0.2rem 0 0.9rem rgba(255, 255, 255, 0.2);
 }
 
 .btn-card.fav {
-  border-color: #ff4c4c !important;
-  color: #ff4c4c;
+	border-color: #ff4c4c !important;
+	color: #ff4c4c;
+}
+
+.card-page h2 {
+	font-size: 2em;
 }
