@@ -33,12 +33,17 @@ $tags = explode(',', $snippet['tag'] ?? '');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/assets/img/favicon.ico" >
     <meta name="theme-color" content="#000000" >
-    <meta
-      name="description"
-      content="content">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="<?= htmlspecialchars($snippet['description'] ?? $snippet['name']) ?> — сниппет от пользователя <?= htmlspecialchars($snippet['username']) ?>. Теги: <?= htmlspecialchars($snippet['tag']) ?>. WebElementsLab">
+    <meta name="keywords" content="<?= htmlspecialchars($snippet['tag']) ?>, HTML, CSS, JS, сниппет, WebElementsLab, код, пример, компонент">
     <link rel="apple-touch-icon" href="/assets/img/logo192.png" >
-    <title><?= htmlspecialchars($snippet['name']) ?> | WebElementsLab</title>
+    <title><?= htmlspecialchars($snippet['name']) ?> — сниппет от <?= htmlspecialchars($snippet['username']) ?> | WebElementsLab</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <meta property="og:title" content="<?= htmlspecialchars($snippet['name']) ?> — сниппет для веба">
+    <meta property="og:description" content="<?= htmlspecialchars($snippet['description'] ?? $snippet['name']) ?>. Автор: <?= htmlspecialchars($snippet['username']) ?>. Теги: <?= htmlspecialchars($snippet['tag']) ?>.">
+    <meta property="og:image" content="https://webelementslab.ru/assets/img/logo512.png">
+    <meta property="og:url" content="https://webelementslab.ru/card.php?id=<?= $snippet['id'] ?>">
+    <meta property="og:type" content="article">
     <!-- Prism CSS -->
     <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet" />
     <!-- Prism JS -->
@@ -104,7 +109,10 @@ $tags = explode(',', $snippet['tag'] ?? '');
             </div>   
         </div>
         <div>
-            <p>Короткая информация с ссылками на то как подключать стили</p>
+            <p>
+                Как правильно подключать CSS и JS? Подробнее — в <a href="/guide.php" target="_blank">гайде по подключению стилей и скриптов</a>.<br>
+                В инструкции: примеры подключения через <code>&lt;link&gt;</code> и <code>&lt;script&gt;</code>, а также варианты вставки кода прямо в HTML-файл.
+            </p>
         </div>
     </div>
     <script>
