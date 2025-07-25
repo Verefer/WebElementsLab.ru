@@ -5,6 +5,16 @@ if (empty($_SESSION['id'])) {
     header('Location: /pages/login.php');
     exit;
 }
+
+require_once __DIR__ . '/../includes/db.php';
+
+$user_id = $_SESSION['id'];
+
+// Получаем профиль пользователя
+$stmt = $pdo->prepare('SELECT * FROM user_profiles WHERE user_id = ? LIMIT 1');
+$stmt->execute([$user_id]);
+$profile = $stmt->fetch();
+
 ?>
 
 <!DOCTYPE html>
@@ -57,6 +67,7 @@ if (empty($_SESSION['id'])) {
     <div class="wrapper">
         <main>
         <h1>Профиль <?= htmlspecialchars($_SESSION['username'] ?? 'Гость') ?></h1>
+        <pre><?php print_r($profile); ?></pre>
         <h2>Дизайн ещё не разработан</h2>
         <a href="/pages/logout.php" class="reg-btn anim-hover-box-shadow">Выход</a>
         </main>
