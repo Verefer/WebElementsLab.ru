@@ -49,27 +49,15 @@
 	background-size: 60%;
 }
 .profile-social.vk {
-	background-image: url('/assets/img/vk.svg');
+	background-image: url('/assets/img/vk-social.webp');
 }
 .profile-social.tg {
-	background-image: url('/assets/img/tg.svg');
+	background-image: url('/assets/img/tg-social.webp');
 }
 .profile-social.gh {
-	background-image: url('/assets/img/github.svg');
+	background-image: url('/assets/img/gh-social.webp');
 }
 .profile-social:hover {
 	background: #2a7ae2;
 	box-shadow: 0 2px 8px rgba(42, 122, 226, 0.18);
-}
-@media (max-width: 600px) {
-	.profile-card {
-		padding: 18px 6px;
-	}
-	.profile-avatar {
-		width: 72px;
-		height: 72px;
-	}
-	.profile-info h1 {
-		font-size: 1.2rem;
-	}
 }
