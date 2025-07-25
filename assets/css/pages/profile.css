@@ -1,0 +1,79 @@
+/* Стили для страницы профиля */
+.profile-card {
+	max-width: 420px;
+	margin: 40px auto;
+	background: #fff;
+	border-radius: 18px;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+	padding: 32px 24px 24px 24px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 18px;
+}
+.profile-avatar {
+	width: 96px;
+	height: 96px;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	margin-bottom: 8px;
+}
+.profile-avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.profile-info h1 {
+	font-size: 1.6rem;
+	margin: 0 0 6px 0;
+	font-weight: 700;
+}
+.profile-email,
+.profile-bio {
+	color: #555;
+	font-size: 1rem;
+	margin: 0 0 8px 0;
+}
+.profile-socials {
+	display: flex;
+	gap: 14px;
+	margin: 10px 0 18px 0;
+}
+.profile-social {
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+	background: #f3f3f3;
+	border-radius: 50%;
+	transition: box-shadow 0.2s, background 0.2s;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 60%;
+}
+.profile-social.vk {
+	background-image: url('/assets/img/vk.svg');
+}
+.profile-social.tg {
+	background-image: url('/assets/img/tg.svg');
+}
+.profile-social.gh {
+	background-image: url('/assets/img/github.svg');
+}
+.profile-social:hover {
+	background: #e0e0e0;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 600px) {
+	.profile-card {
+		padding: 18px 6px;
+	}
+	.profile-avatar {
+		width: 72px;
+		height: 72px;
+	}
+	.profile-info h1 {
+		font-size: 1.2rem;
+	}
+}

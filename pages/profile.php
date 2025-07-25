@@ -55,6 +55,7 @@ $profile = $stmt->fetch();
     <link rel="apple-touch-icon" href="/assets/img/logo192.png" >
     <title>WebElementsLab — HTML, CSS и JS сниппеты для веб-разработчиков</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/pages/profile.css">
     <meta property="og:title" content="WebElementsLab — HTML/CSS/JS элементы">
     <meta property="og:description" content="Готовые сниппеты и UI для твоих проектов.">
     <meta property="og:image" content="https://webelementslab.ru/assets/img/logo512.png">
@@ -66,10 +67,22 @@ $profile = $stmt->fetch();
     <?php require_once __DIR__ . '/../templates/header.php'; ?>
     <div class="wrapper">
         <main>
-        <h1>Профиль <?= htmlspecialchars($_SESSION['username'] ?? 'Гость') ?></h1>
-        <pre><?php print_r($profile); ?></pre>
-        <h2>Дизайн ещё не разработан</h2>
-        <a href="/pages/logout.php" class="reg-btn anim-hover-box-shadow">Выход</a>
+        <section class="profile-card">
+            <div class="profile-avatar">
+                <img src="<?= $profile['avatar_url'] ?? '/assets/img/default-avatar.png' ?>" alt="Аватар" />
+            </div>
+            <div class="profile-info">
+                <h1><?= htmlspecialchars($_SESSION['username'] ?? 'Гость') ?></h1>
+                <p class="profile-email">Email: <span><!-- email --></span></p>
+                <p class="profile-bio">О себе: <span><!-- bio --></span></p>
+                <div class="profile-socials">
+                    <a href="#" class="profile-social vk" title="VK" target="_blank"></a>
+                    <a href="#" class="profile-social tg" title="Telegram" target="_blank"></a>
+                    <a href="#" class="profile-social gh" title="GitHub" target="_blank"></a>
+                </div>
+                <a href="/pages/logout.php" class="reg-btn anim-hover-box-shadow">Выход</a>
+            </div>
+        </section>
         </main>
     </div>
     <?php require_once __DIR__ . '/../templates/footer.php'; ?>
