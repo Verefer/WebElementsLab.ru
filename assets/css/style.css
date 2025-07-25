@@ -434,13 +434,37 @@ pre[class*=language-] {
 
 .tag-pill {
   display: inline-block;
-  background: #eee;
-  color: #333;
-  padding: 0.25rem 0.6rem;
+  background: linear-gradient(90deg, #ffb347, #ffcc33);
+  color: #222;
+  padding: 0.25rem 0.8rem;
   border-radius: 999px;
-  font-size: 0.85rem;
-  margin-right: 0.2rem;
-  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border: none;
+  transition: background 0.3s, color 0.3s;
+}
+.tag-pill:nth-child(2n) {
+  background: linear-gradient(90deg, #87e0fd, #53cbf1);
+  color: #222;
+}
+.tag-pill:nth-child(3n) {
+  background: linear-gradient(90deg, #fcb1ff, #b47cff);
+  color: #222;
+}
+.tag-pill:nth-child(4n) {
+  background: linear-gradient(90deg, #b6ffb1, #4cff7c);
+  color: #222;
+}
+.tag-pill:nth-child(5n) {
+  background: linear-gradient(90deg, #ffd6b1, #ff7c4c);
+  color: #222;
+}
+.tag-pill:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 
 .block-tag{
