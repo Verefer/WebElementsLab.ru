@@ -32,28 +32,17 @@ session_start();
             <input class="inp-sub" type="email" name="subcribeemail" id="subcribeemail" autocomplete="email" placeholder="Ваша почта...">
             <button class="sub-btn" id="sub-btn">Подписаться</button>
         </div>
-
-        <script>
-            document.getElementById('sub-btn').addEventListener('click', function () {
-                const email = document.getElementById('subcribeemail').value.trim();
-
-                if (email !== '') {
-                    const encodedEmail = encodeURIComponent(email);
-                    window.location.href = `/register.php?email=${encodedEmail}`;
-                } else {
-                    alert('Введите почту перед подпиской!');
-                }
-            });
-        </script>
-                <!-- тут будет лента с карточками -->
-        <div>
+        <!-- тут будет лента с карточками -->
+        <!-- <div>
                 <a href="/card.php">Карточка</a>
-        </div>
+                <a href="/card.php?id=2">Карточка с id 2</a>
+        </div> -->
          <h1 class="ldp-admin-title">Здравствуйте, <?= htmlspecialchars($_SESSION['username'] ?? 'Гость') ?></h1>
-        </main>
+        <!-- Лента карточек -->
+        <div id="snippets-list"></div>
+        <!-- JS вынесен в assets/js/main.js -->
     </div>
     <?php require_once __DIR__ . '/templates/footer.php'; ?>
-
-
+    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
