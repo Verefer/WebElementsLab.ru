@@ -451,3 +451,59 @@ pre[class*=language-] {
 .block-tag{
   max-width: 10rem;
 }
+
+.guide-main {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 32px 24px;
+    font-size: 1.1em;
+}
+.guide-main h1 {
+    margin-bottom: 18px;
+    font-size: 2em;
+    color: #222;
+}
+.guide-main h2 {
+    margin-top: 24px;
+    color: #2a7ae2;
+    font-size: 1.2em;
+}
+.guide-main pre {
+    background: #f6f8fa;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 1em;
+    margin-bottom: 12px;
+    overflow-x: auto;
+}
+.guide-main ul {
+    margin: 16px 0;
+    padding-left: 22px;
+}
+.guide-main li {
+    margin-bottom: 8px;
+}
+.guide-main a {
+    color: #2a7ae2;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.guide-main a:hover {
+    color: #0056b3;
+    background: #eaf4ff;
+    text-decoration: none;
+}
+/* Стили для всех ссылок на сайте */
+a {
+    color: #2a7ae2;
+    text-decoration: underline;
+    transition: color 0.2s, background 0.2s;
+}
+a:hover {
+    color: #0056b3;
+    background: #eaf4ff;
+    text-decoration: none;
+}
