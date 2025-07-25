@@ -60,7 +60,7 @@ $tags = explode(',', $snippet['tag'] ?? '');
 <main>
     <div class="d-flex gap1 card-page f-d-column">
         <div class="d-flex j-c-space-between">
-        <h2><?= htmlspecialchars($snippet['name']) ?></h2>
+        <h1 class="card-title"><?= htmlspecialchars($snippet['name']) ?></h1>
         <h2><?= htmlspecialchars($snippet['username']) ?></h2>
         </div>
         <div class="f-d-row d-flex gap1">
@@ -73,7 +73,7 @@ $tags = explode(',', $snippet['tag'] ?? '');
                 </div>
                 <div class="tags d-flex gap05 wrap f-d-column gap1">
                 <?php if (isset($_SESSION['username'])): ?>
-                    <button class="btn-card j-c-center d-flex" id="fav-btn" data-id="<?= $snippet['id'] ?>">
+                    <button class="btn-card j-c-center d-flex<?= $is_favorite ? ' fav' : '' ?>" id="fav-btn" data-id="<?= $snippet['id'] ?>">
                         <?= $is_favorite ? '💖 В избранном' : '🤍 В избранное' ?>
                     </button>
                 <?php endif; ?>
