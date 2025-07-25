@@ -57,7 +57,7 @@ $tags = explode(',', $snippet['tag'] ?? '');
 <body>
 <div class="wrapper">
 <?php require_once __DIR__ . '/../templates/header.php'; ?>
-<main>
+<main class="block-main">
     <div class="d-flex gap1 card-page f-d-column">
         <div class="d-flex j-c-space-between">
         <h1 class="card-title"><?= htmlspecialchars($snippet['name']) ?></h1>
