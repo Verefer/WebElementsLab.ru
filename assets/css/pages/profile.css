@@ -2,9 +2,9 @@
 .profile-card {
 	max-width: 420px;
 	margin: 40px auto;
-	background: #fff;
+	background: rgba(20, 24, 40, 0.98);
 	border-radius: 18px;
-	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
 	padding: 32px 24px 24px 24px;
 	display: flex;
 	flex-direction: column;
@@ -16,8 +16,9 @@
 	height: 96px;
 	border-radius: 50%;
 	overflow: hidden;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 	margin-bottom: 8px;
+	background: #222a44;
 }
 .profile-avatar img {
 	width: 100%;
@@ -28,12 +29,20 @@
 	font-size: 1.6rem;
 	margin: 0 0 6px 0;
 	font-weight: 700;
+	color: #fff;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 .profile-email,
 .profile-bio {
-	color: #555;
+	color: #b3b9c9;
 	font-size: 1rem;
 	margin: 0 0 8px 0;
+	word-break: break-word;
+}
+.profile-email span,
+.profile-bio span {
+	color: #e6eaff;
+	font-weight: 500;
 }
 .profile-socials {
 	display: flex;
@@ -44,10 +53,10 @@
 	width: 32px;
 	height: 32px;
 	display: inline-block;
-	background: #f3f3f3;
+	background: #232a3a;
 	border-radius: 50%;
 	transition: box-shadow 0.2s, background 0.2s;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 60%;
@@ -62,8 +71,8 @@
 	background-image: url('/assets/img/github.svg');
 }
 .profile-social:hover {
-	background: #e0e0e0;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	background: #2a7ae2;
+	box-shadow: 0 2px 8px rgba(42, 122, 226, 0.18);
 }
 @media (max-width: 600px) {
 	.profile-card {
