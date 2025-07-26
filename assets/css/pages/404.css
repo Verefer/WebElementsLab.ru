@@ -33,20 +33,16 @@
 	}
 }
 
-.error-code:hover {
-	border: 1px var(--accent-hover) solid;
-}
-
 .error-title {
 	font-size: 2rem;
-	color: #9e9e9e;
+	color: #d4d4d4;
 	margin: 1rem 0;
 	font-weight: 600;
 }
 
 .error-description {
 	font-size: 1.1rem;
-	color: #dddddd;
+	color: #eeeeee;
 	margin-bottom: 2rem;
 	max-width: 500px;
 	line-height: 1.6;
@@ -70,6 +66,10 @@
 	font-size: 1rem;
 	font-weight: 500;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.error-btn:hover {
+	border: 1px var(--accent-hover) solid;
 }
 
 .error-btn.secondary {
