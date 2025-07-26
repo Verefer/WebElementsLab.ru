@@ -22,7 +22,6 @@ if (!empty($_SESSION['username'])) {
 <body>
 <div class="wrapper">
 <main>
-
 <div class="authentication">
     <div class="auth-text-up">
         <a href="/">
@@ -152,7 +151,7 @@ document.getElementById('login-form').addEventListener('submit', async function 
 });
 </script>
 </main>
-<?php require_once __DIR__ . '/../templates/footer.php'; ?>
 </div>
+<?php require_once __DIR__ . '/../templates/footer.php'; ?>
 </body>
 </html>

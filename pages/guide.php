@@ -21,8 +21,8 @@ session_start();
     <meta property="og:type" content="article">
 </head>
 <body>
-<div class="wrapper">
 <?php require_once __DIR__ . '/../templates/header.php'; ?>
+<div class="wrapper">
 <main class="block-main guide-main">
     <h1>Гайд: как правильно подключать CSS и JS</h1>
     <p>В этом гайде вы узнаете, как подключать стили и скрипты к вашему проекту:</p>
@@ -48,7 +48,7 @@ console.log('Hello!');
     </ul>
     <p>Больше примеров и советов — на <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/link" target="_blank">MDN</a>.</p>
 </main>
-<?php require_once __DIR__ . '/../templates/footer.php'; ?>
 </div>
+<?php require_once __DIR__ . '/../templates/footer.php'; ?>
 </body>
 </html>

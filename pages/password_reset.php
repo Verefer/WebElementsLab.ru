@@ -42,8 +42,8 @@
         </div>
     </div>
 </main>
-<?php require_once __DIR__ . '/../templates/footer.php'; ?>
 </div>
+<?php require_once __DIR__ . '/../templates/footer.php'; ?>
 <script>
 document.getElementById('passwordResetForm').addEventListener('submit', function(e) {
     e.preventDefault();

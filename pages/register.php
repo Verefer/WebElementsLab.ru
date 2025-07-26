@@ -120,7 +120,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     <script src="/assets/js/form_validation.js"></script>
 </main>
-<?php require_once __DIR__ . '/../templates/footer.php'; ?>
 </div>
+<?php require_once __DIR__ . '/../templates/footer.php'; ?>
+
 </body>
 </html>

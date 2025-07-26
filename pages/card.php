@@ -55,8 +55,8 @@ $tags = explode(',', $snippet['tag'] ?? '');
 
 </head>
 <body>
-<div class="wrapper">
 <?php require_once __DIR__ . '/../templates/header.php'; ?>
+<div class="wrapper">
 <main class="block-main">
     <div class="d-flex gap1 card-page f-d-column">
         <div class="d-flex j-c-space-between">
@@ -114,8 +114,8 @@ $tags = explode(',', $snippet['tag'] ?? '');
         </div>
     </div>
 </main>
-<?php require_once __DIR__ . '/../templates/footer.php'; ?>
 </div>
+<?php require_once __DIR__ . '/../templates/footer.php'; ?>
 <script>
 window.snippetPreviewData = {
     html: <?= json_encode($snippet['html']) ?>,
