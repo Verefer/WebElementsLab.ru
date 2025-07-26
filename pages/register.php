@@ -43,8 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $stmt = $pdo->prepare("INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)");
             $stmt->execute([$username, $email, $hash, $role]);
+            
+            // Получаем id только что созданного пользователя
+            $user_id = $pdo->lastInsertId();
 
-            $_SESSION['user_logged_in'] = true;
+            $_SESSION['id'] = $user_id;
             $_SESSION['username'] = $username;
             $_SESSION['role'] = $role;
 

@@ -1,19 +1,28 @@
 <?php
 session_start();
 
-if (empty($_SESSION['id'])) {
+// Получаем id пользователя для просмотра профиля
+if (!empty($_GET['id'])) {
+    $user_id = (int)$_GET['id'];
+} elseif (!empty($_SESSION['id'])) {
+    $user_id = $_SESSION['id'];
+} else {
+    // Если не авторизован и не указан id — редирект на логин
     header('Location: /pages/login.php');
     exit;
 }
 
 require_once __DIR__ . '/../includes/db.php';
 
-$user_id = $_SESSION['id'];
-
 // Получаем профиль пользователя
 $stmt = $pdo->prepare('SELECT * FROM user_profiles WHERE user_id = ? LIMIT 1');
 $stmt->execute([$user_id]);
 $profile = $stmt->fetch();
+
+// Получаем информацию о пользователе
+$stmt = $pdo->prepare('SELECT username, email FROM users WHERE id = ? LIMIT 1');
+$stmt->execute([$user_id]);
+$user = $stmt->fetch();
 
 ?>
 
@@ -72,9 +81,9 @@ $profile = $stmt->fetch();
                 <img src="<?= $profile['avatar_url'] ?? '/assets/img/default-avatar.png' ?>" alt="Аватар" />
             </div>
             <div class="profile-info">
-                <h1><?= htmlspecialchars($_SESSION['username'] ?? 'Гость') ?></h1>
-                <p class="profile-email">Email: <span><!-- email --></span></p>
-                <p class="profile-bio">О себе: <span><!-- bio --></span></p>
+                <h1><?= htmlspecialchars($user['username'] ?? 'Гость') ?></h1>
+                <p class="profile-email">Email: <span><?= htmlspecialchars($user['email'] ?? '') ?></span></p>
+                <p class="profile-bio">О себе: <span><?= htmlspecialchars($profile['bio'] ?? '') ?></span></p>
                 <div class="profile-socials">
                     <a href="#" class="profile-social vk" title="VK" target="_blank"></a>
                     <a href="#" class="profile-social tg" title="Telegram" target="_blank"></a>
