@@ -56,42 +56,35 @@
 }
 
 .error-btn {
-	position: relative;
-	padding: 12px 24px;
+	background-color: transparent;
+	color: white;
+	padding: 0.4rem 1.2rem;
+	border: 0.0625rem white solid;
+	border-radius: 50em;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+	transform-origin: center;
+	height: 2.25rem;
+	will-change: transform;
+	transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 0.25s ease, border-color 0.2s;
+	box-shadow: 0 0.2rem 0.9rem rgba(255, 255, 255, 0.2);
 	font-size: 1rem;
 	font-weight: 500;
-	color: var(--text-color);
-	background-color: transparent;
-	border: 1px solid var(--text-color);
-	border-radius: 6px;
-	cursor: pointer;
-	overflow: hidden;
-	z-index: 0;
-	transition: all 0.3s ease-in-out;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Анимация фона при наведении */
-.error-btn::before {
-	content: '';
-	position: absolute;
-	inset: 0;
-	background: linear-gradient(90deg, var(--success), #16a34a);
-	opacity: 0;
-	z-index: -1;
-	transition: opacity 0.4s ease-in-out;
+.error-btn:active {
+	transform: scale(0.93);
+	box-shadow: 0 0.1rem 0.4rem rgba(255, 255, 255, 0.1);
 }
 
-.error-btn:hover::before {
-	opacity: 1;
-}
-
-/* Анимация цвета текста и границы */
 .error-btn:hover {
-	border-color: var(--success);
-	color: #fff;
-	box-shadow: 0 0 10px var(--success), 0 0 20px var(--success);
-	transform: scale(1.03);
+	box-shadow: 0 0 1rem rgba(139, 193, 255, 0.5);
+	border-color: var(--accent);
+	color: var(--accent-hover);
 }
 
 /* Responsive Design */
