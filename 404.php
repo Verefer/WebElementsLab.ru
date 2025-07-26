@@ -26,7 +26,7 @@ session_start();
                 </p>
                 <div class="error-actions">
                     <a href="/" class="error-btn">Вернуться на главную</a>
-                    <button onclick="history.back()" class="error-btn secondary">Назад</button>
+                    <button onclick="history.back()" class="error-btn">Назад</button>
                 </div>
             </div>
         </main>
