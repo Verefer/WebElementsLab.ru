@@ -14,9 +14,8 @@
 	font-size: 8rem;
 	font-weight: bold;
 	color: transparent;
-	-webkit-text-stroke: 2px var(--error); /* Обводка */
-	text-shadow: 0 0 2px var(--error),
-		/* Подсветка вокруг */ 2px 2px 4px rgba(0, 0, 0, 0.1); /* Мягкая тень */
+	-webkit-text-stroke: 2px var(--error);
+	text-shadow: 0 0 2px var(--error), 2px 2px 4px rgba(0, 0, 0, 0.1);
 	margin: 0;
 	line-height: 1;
 	animation: pulse 2s infinite;
