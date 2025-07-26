@@ -1,59 +1,52 @@
-/* Стили для всех ссылок на сайте */
+/* Базовые стили ссылки */
 a {
 	color: var(--accent);
 	text-decoration: none;
-	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	position: relative;
 	outline: none;
+	transition: color 0.3s, text-shadow 0.3s;
 }
 
-/* Основной эффект при наведении */
-a:hover {
-	color: var(--accent-hover);
-	text-shadow: 0 0 8px rgba(42, 122, 226, 0.4);
-}
-
-/* Эффект подчеркивания при наведении */
-a:hover::after {
-	content: '';
-	position: absolute;
-	bottom: -2px;
-	left: 0;
-	width: 100%;
-	height: 1px;
-	background: linear-gradient(90deg, var(--accent), var(--accent-hover));
-	transform: scaleX(1);
-	transform-origin: left;
-	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Начальное состояние подчеркивания */
+/* Анимация подчёркивания */
 a::after {
 	content: '';
 	position: absolute;
 	bottom: -2px;
 	left: 0;
 	width: 100%;
-	height: 1px;
-	background: linear-gradient(90deg, var(--accent), var(--accent-hover));
-	transform: scaleX(0);
-	transform-origin: right;
-	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	height: 2px;
+	background: linear-gradient(
+		90deg,
+		var(--accent),
+		var(--accent-hover),
+		var(--accent)
+	);
+	background-size: 200% auto;
+	transform: scaleX(1);
+	transform-origin: left;
+	opacity: 0;
+	transition: opacity 0.3s;
+	pointer-events: none;
 }
 
-/* Фокус для доступности */
-a:focus {
+/* Наведение */
+a:hover {
 	color: var(--accent-hover);
-	text-shadow: 0 0 8px rgba(42, 122, 226, 0.6);
-	outline: 2px solid var(--accent);
-	outline-offset: 2px;
-	border-radius: 2px;
+	text-shadow: 0 0 8px rgba(42, 122, 226, 0.4);
 }
 
-/* Активное состояние */
-a:active {
-	transform: scale(0.98);
-	transition: transform 0.1s ease;
+a:hover::after {
+	opacity: 1;
+	animation: underline-pulse 1.2s linear infinite;
+}
+
+@keyframes underline-pulse {
+	from {
+		background-position: 0% 0;
+	}
+	to {
+		background-position: 200% 0;
+	}
 }
 
 /* Стили для внешних ссылок */
