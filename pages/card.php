@@ -44,9 +44,8 @@ $tags = explode(',', $snippet['tag'] ?? '');
     <meta property="og:image" content="https://webelementslab.ru/assets/img/logo512.png">
     <meta property="og:url" content="https://webelementslab.ru/card.php?id=<?= $snippet['id'] ?>">
     <meta property="og:type" content="article">
-    <!-- Prism CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-dark.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <!-- Prism CSS (Dark Theme) -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-dark.css" rel="stylesheet" >
     <!-- Prism JS -->
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js" defer></script>
     <!-- Языки -->
