@@ -13,7 +13,7 @@
 .error-code {
 	font-size: 8rem;
 	font-weight: bold;
-	color: transparent;
+	color: rgba(255, 255, 255, 0);
 	-webkit-text-stroke: 2px var(--error);
 	text-shadow: 0 0 2px var(--error), 2px 2px 4px rgba(0, 0, 0, 0.1);
 	margin: 0;
@@ -60,7 +60,7 @@
 	color: white;
 	text-decoration: none;
 	border-radius: 6px;
-	border: white 1px solid;
+	border: 1px white solid;
 	transition: all 0.3s ease;
 	border: none;
 	cursor: pointer;
@@ -70,11 +70,11 @@
 }
 
 .error-btn.secondary {
-	border: #6c757d 1px solid;
+	border: 1px #6c757d solid;
 }
 
 .error-btn.secondary:hover {
-	border: #545b62 1px sol;
+	border: 1px #545b62 solid;
 	box-shadow: 0 0 12px rgba(108, 117, 125, 0.3);
 }
 
