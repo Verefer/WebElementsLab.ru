@@ -17,6 +17,7 @@ main {
 	flex-direction: column;
 	align-items: center;
 	margin: 2rem auto;
+	flex: 1;
 }
 
 .wrapper {
