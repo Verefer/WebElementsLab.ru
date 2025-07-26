@@ -33,32 +33,6 @@ $user = $stmt->fetch();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/assets/img/favicon.ico" >
     <meta name="theme-color" content="#000000" >
-    <!--
-    <meta name="robots" content="..."> — управляет поведением поисковых систем на странице.
-
-    Возможные значения:
-    index        — разрешить индексировать страницу (по умолчанию)
-    noindex      — запретить индексировать страницу (не попадёт в поисковую выдачу)
-
-    follow       — разрешить переход по ссылкам и индексировать их (по умолчанию)
-    nofollow     — запретить переход по ссылкам и их индексацию
-
-    all          — то же самое, что index, follow (явное разрешение)
-    none         — то же самое, что noindex, nofollow (полный запрет)
-
-    noarchive    — запретить поисковикам сохранять копию страницы (кэш)
-    nosnippet    — запретить показывать сниппет (описание) в поиске
-    notranslate  — запретить показывать кнопку перевода в поисковой выдаче
-    noimageindex — запретить индексировать изображения на странице
-
-    ✅ Примеры:
-    <meta name="robots" content="index, follow">           — стандартное поведение
-    <meta name="robots" content="noindex, nofollow">       — полностью скрыть страницу
-    <meta name="robots" content="noarchive, nosnippet">    — не кэшировать и не показывать описание
-    <meta name="robots" content="noindex, follow">         — не индексировать, но переходить по ссылкам
-
-    Совет: можно задать директивы только для конкретных ботов, например:
-    <meta name="googlebot" content="noindex, nofollow">  -->
     <meta name="robots" content="index, follow">
     <meta name="description" content="Профиль пользователя WebElementsLab">
     <link rel="apple-touch-icon" href="/assets/img/logo192.png" >
@@ -77,21 +51,38 @@ $user = $stmt->fetch();
     <div class="wrapper">
         <main>
         <section class="block-main">
-            <div class="profile-avatar">
-                <img src="<?= $profile['avatar_url'] ?? '/assets/img/default-avatar.png' ?>" alt="Аватар" />
+            <!-- Фоновое изображение -->
+            <div class="profile-bg" 
+                style="background-image: url('<?= !empty($profile['bg-img-url']) ? htmlspecialchars($profile['bg-img-url']) : '/assets/img/default-bg.jpg' ?>');">
             </div>
+
+            <div class="profile-avatar">
+                <img src="<?= !empty($profile['avatar_url']) ? htmlspecialchars($profile['avatar_url']) : '/assets/img/default-avatar.png' ?>" alt="Аватар" />
+            </div>
+
             <div class="profile-info">
                 <h1><?= htmlspecialchars($user['username'] ?? 'Гость') ?></h1>
                 <p class="profile-email">Email: <span><?= htmlspecialchars($user['email'] ?? '') ?></span></p>
                 <p class="profile-bio">О себе: <span><?= htmlspecialchars($profile['bio'] ?? '') ?></span></p>
+
                 <div class="profile-socials">
-                    <a href="#" class="profile-social vk" title="VK" target="_blank"></a>
-                    <a href="#" class="profile-social tg" title="Telegram" target="_blank"></a>
-                    <a href="#" class="profile-social gh" title="GitHub" target="_blank"></a>
+                    <?php if (!empty($profile['vk'])): ?>
+                        <a href="https://vk.com/<?= htmlspecialchars($profile['vk']) ?>" class="profile-social vk" title="VK" target="_blank" rel="noopener"></a>
+                    <?php endif; ?>
+
+                    <?php if (!empty($profile['tg'])): ?>
+                        <a href="https://t.me/<?= htmlspecialchars($profile['tg']) ?>" class="profile-social tg" title="Telegram" target="_blank" rel="noopener"></a>
+                    <?php endif; ?>
+
+                    <?php if (!empty($profile['github'])): ?>
+                        <a href="https://github.com/<?= htmlspecialchars($profile['github']) ?>" class="profile-social gh" title="GitHub" target="_blank" rel="noopener"></a>
+                    <?php endif; ?>
                 </div>
+
                 <a href="/pages/logout.php" class="reg-btn anim-hover-box-shadow">Выход</a>
             </div>
         </section>
+
             <script>
                 document.querySelectorAll('.profile-social').forEach(btn => {
                 btn.addEventListener('mouseup', e => btn.blur());

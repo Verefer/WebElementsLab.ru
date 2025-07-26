@@ -1,3 +1,14 @@
+<?php
+if (isset($_SESSION['id'])) {
+    require_once __DIR__ . '/../includes/db.php';
+    $stmt = $pdo->prepare('SELECT avatar_url FROM user_profiles WHERE user_id = ? LIMIT 1');
+    $stmt->execute([$_SESSION['id']]);
+    $user_profile = $stmt->fetch();
+    $avatar_url = !empty($user_profile['avatar_url']) ? $user_profile['avatar_url'] : '/assets/img/default-avatar.png';
+}
+?>
+
+
 <header>
     <div class="nav-left">
         <a href="/">
@@ -12,7 +23,7 @@
         <?php if (isset($_SESSION['username'])): ?>
             <div class="profile-menu-wrapper" id="profileWrapper">
                 <span class="username-label"><?= htmlspecialchars($_SESSION['username']) ?></span>
-                <img src="/assets/img/default-avatar.png" alt="avatar" class="avatar" id="avatarToggle">
+                <img src="<?= $avatar_url ?>" alt="avatar" class="avatar" id="avatarToggle">
                 <div class="dropdown-menu" id="profileMenu">
                     <a href="/pages/profile.php">Профиль</a>
                     <a href="/pages/settings.php">Настройки</a>
@@ -20,6 +31,7 @@
                     <a href="/pages/logout.php" class="logout-link">Выход</a>
                 </div>
             </div>
+
 
         <?php else: ?>
             <a href="/pages/login.php">Вход</a>

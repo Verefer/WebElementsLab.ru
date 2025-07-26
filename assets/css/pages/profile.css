@@ -7,6 +7,14 @@
 	margin-bottom: 8px;
 	background: #222a44;
 }
+
+.profile-bg {
+	width: 100%;
+	height: 220px;
+	background-size: cover;
+	background-position: center;
+}
+
 .profile-avatar img {
 	width: 100%;
 	height: 100%;
