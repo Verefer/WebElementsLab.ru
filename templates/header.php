@@ -1,6 +1,8 @@
 <header>
     <div class="nav-left">
-        <img src="/assets/img/logo.svg" class="logo-header" alt="logo">
+        <a href="/">
+            <img src="/assets/img/logo.svg" class="logo-header" alt="logo">
+        </a>
         <a href="/">Главная</a>
         <a href="/pages/login.php">Вход</a>
         <a href="/pages/register.php">Регистрация</a>
@@ -10,7 +12,7 @@
         <?php if (isset($_SESSION['username'])): ?>
             <div class="profile-menu-wrapper" id="profileWrapper">
                 <span class="username-label"><?= htmlspecialchars($_SESSION['username']) ?></span>
-                <img href="/" src="/assets/img/default-avatar.png" alt="avatar" class="avatar" id="avatarToggle">
+                <img src="/assets/img/default-avatar.png" alt="avatar" class="avatar" id="avatarToggle">
                 <div class="dropdown-menu" id="profileMenu">
                     <a href="/pages/profile.php">Профиль</a>
                     <a href="/pages/settings.php">Настройки</a>
