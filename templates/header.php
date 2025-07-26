@@ -10,7 +10,7 @@
         <?php if (isset($_SESSION['username'])): ?>
             <div class="profile-menu-wrapper" id="profileWrapper">
                 <span class="username-label"><?= htmlspecialchars($_SESSION['username']) ?></span>
-                <img src="/assets/img/default-avatar.png" alt="avatar" class="avatar" id="avatarToggle">
+                <img href="/" src="/assets/img/default-avatar.png" alt="avatar" class="avatar" id="avatarToggle">
                 <div class="dropdown-menu" id="profileMenu">
                     <a href="/pages/profile.php">Профиль</a>
                     <a href="/pages/settings.php">Настройки</a>
