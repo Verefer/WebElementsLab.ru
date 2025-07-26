@@ -1,6 +1,7 @@
 /* Цвета, шрифты, переменные */
 :root {
-	--main-bg: #000022;
+	--main-bg: #1f1f1f;
+	--layot-bg: #373737;
 	--main-color: #d1d7e0;
 	--accent: #2a7ae2;
 	--accent-hover: #6ea8fe;
