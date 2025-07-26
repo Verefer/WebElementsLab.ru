@@ -14,7 +14,7 @@
 	font-size: 8rem;
 	font-weight: bold;
 	color: rgba(255, 255, 255, 0);
-	-webkit-text-stroke: 2px var(--main-color);
+	-webkit-text-stroke: 2px #ff4c4c;
 	text-shadow: 0 0 2rem var(--error);
 	margin: 0;
 	line-height: 1;
@@ -56,21 +56,42 @@
 }
 
 .error-btn {
+	position: relative;
 	padding: 12px 24px;
-	color: white;
-	text-decoration: none;
-	background-color: transparent;
-	border-radius: 6px;
-	border: 1px white solid;
-	transition: all 0.3s ease;
-	cursor: pointer;
 	font-size: 1rem;
 	font-weight: 500;
+	color: var(--text-color);
+	background-color: transparent;
+	border: 1px solid var(--text-color);
+	border-radius: 6px;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 0;
+	transition: all 0.3s ease-in-out;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Анимация фона при наведении */
+.error-btn::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(90deg, var(--success), #16a34a);
+	opacity: 0;
+	z-index: -1;
+	transition: opacity 0.4s ease-in-out;
+}
+
+.error-btn:hover::before {
+	opacity: 1;
+}
+
+/* Анимация цвета текста и границы */
 .error-btn:hover {
-	border: 1px var(--success) solid;
+	border-color: var(--success);
+	color: #fff;
+	box-shadow: 0 0 10px var(--success), 0 0 20px var(--success);
+	transform: scale(1.03);
 }
 
 /* Responsive Design */

@@ -7,6 +7,7 @@
 	--accent-hover: #82dae0;
 	--error: #f44336;
 	--success: #4caf50;
+	--text-color: white;
 }
 body {
 	font-family: 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif,

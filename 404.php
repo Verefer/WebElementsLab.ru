@@ -25,7 +25,7 @@ session_start();
                     Возможно, вы перешли по устаревшей ссылке или допустили ошибку в адресе.
                 </p>
                 <div class="error-actions">
-                    <a href="/" class="error-btn">Вернуться на главную</a>
+                    <button onclick="window.location.href='/'" class="error-btn">Вернуться на главную</button>
                     <button onclick="history.back()" class="error-btn">Назад</button>
                 </div>
             </div>
