@@ -33,6 +33,10 @@
 	}
 }
 
+.error-code:hover {
+	border: 1px var(--accent-hover) solid;
+}
+
 .error-title {
 	font-size: 2rem;
 	color: #9e9e9e;
@@ -62,7 +66,6 @@
 	border-radius: 6px;
 	border: 1px white solid;
 	transition: all 0.3s ease;
-	border: none;
 	cursor: pointer;
 	font-size: 1rem;
 	font-weight: 500;
@@ -71,28 +74,12 @@
 
 .error-btn.secondary {
 	border: 1px #6c757d solid;
+	background-color: #ffffff00;
 }
 
 .error-btn.secondary:hover {
 	border: 1px #545b62 solid;
 	box-shadow: 0 0 12px rgba(108, 117, 125, 0.3);
-}
-
-.error-illustration {
-	font-size: 4rem;
-	margin-bottom: 1rem;
-	opacity: 0.7;
-	animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-	0%,
-	100% {
-		transform: translateY(0px);
-	}
-	50% {
-		transform: translateY(-10px);
-	}
 }
 
 /* Responsive Design */
@@ -117,10 +104,6 @@
 
 	.error-btn {
 		width: 200px;
-	}
-
-	.error-illustration {
-		font-size: 3rem;
 	}
 }
 

@@ -20,7 +20,6 @@ session_start();
     <div class="wrapper">
         <main class="block-main">
             <div class="error-container">
-                <div class="error-illustration">🔍</div>
                 <h1 class="error-code">404</h1>
                 <h2 class="error-title">Страница не найдена</h2>
                 <p class="error-description">
