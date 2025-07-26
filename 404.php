@@ -16,8 +16,6 @@ session_start();
     <link rel="stylesheet" href="/assets/css/pages/404.css">
 </head>
 <body>
-    <?php require_once __DIR__ . '/templates/header.php'; ?>
-    <div class="wrapper">
         <main class="block-main">
             <div class="error-container">
                 <h1 class="error-code">404</h1>
@@ -32,7 +30,5 @@ session_start();
                 </div>
             </div>
         </main>
-    </div>
-    <?php require_once __DIR__ . '/templates/footer.php'; ?>
 </body>
 </html> 
