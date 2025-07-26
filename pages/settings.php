@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([$user_id]);
 
     if ($stmt->fetch()) {
-        $stmt = $pdo->prepare("UPDATE user_profiles SET avatar_url = ?, 'bg-img-url' = ?, bio = ?, vk = ?, tg = ?, github = ? WHERE user_id = ?");
+        $stmt = $pdo->prepare("UPDATE user_profiles SET avatar_url = ?, `bg-img-url` = ?, bio = ?, vk = ?, tg = ?, github = ? WHERE user_id = ?");
         $stmt->execute([$avatar_url, $bg_img_url, $bio, $vk, $tg, $github, $user_id]);
     } else {
         $stmt = $pdo->prepare("INSERT INTO user_profiles (user_id, avatar_url, `bg-img-url`, bio, vk, tg, github) VALUES (?, ?, ?, ?, ?, ?, ?)");
