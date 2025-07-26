@@ -9,9 +9,9 @@ if (!isset($_SESSION['id'])) {
 
 $user_id = $_SESSION['id'];
 
-// Получаем избранные сниппеты
+// Получаем избранные сниппеты с полями name и tag
 $stmt = $pdo->prepare('
-    SELECT s.id, s.title, s.description
+    SELECT s.id, s.name, s.tag
     FROM favorites f
     JOIN snippets s ON s.id = f.snippet_id
     WHERE f.user_id = ?
@@ -41,8 +41,8 @@ $favorites = $stmt->fetchAll();
                 <div class="favorites-list">
                     <?php foreach ($favorites as $snippet): ?>
                         <div class="snippet-card">
-                            <h3><?= htmlspecialchars($snippet['title']) ?></h3>
-                            <p><?= htmlspecialchars($snippet['description']) ?></p>
+                            <h3><?= htmlspecialchars($snippet['name']) ?></h3>
+                            <p><?= htmlspecialchars($snippet['tag']) ?></p>
                             <a href="/pages/card.php?id=<?= $snippet['id'] ?>" class="reg-btn anim-hover-box-shadow">Открыть</a>
                         </div>
                     <?php endforeach; ?>
