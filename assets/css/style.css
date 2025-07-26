@@ -22,7 +22,6 @@
 @import url('./components/_subblock.css');
 @import url('./components/_tabs.css');
 @import url('./components/_tags.css');
-@import url('./components/prism-theme.css');
 
 /* === Utils === */
 @import url('./utils/_flex.css');
