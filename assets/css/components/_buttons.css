@@ -1,81 +1,154 @@
 /* Стили для кнопок */
-input[type="submit"]:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
+input[type='submit']:disabled {
+	opacity: 0.7;
+	cursor: not-allowed;
 }
 
-.reg-btn{
-  padding: 0.4rem 1.2rem;
-  border: 1px white solid;
-  border-radius: 0.5rem;
+.reg-btn {
+	padding: 0.4rem 1.2rem;
+	border: 1px white solid;
+	border-radius: 0.5rem;
 }
 
 .sub-btn {
-    height: 3rem;
-    padding: 0 1.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-left: none;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    background-color: #0077ff;
-    color: #D1D7E0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
+	height: 3rem;
+	padding: 0 1.5rem;
+	font-size: 1rem;
+	border: 1px solid #ccc;
+	border-left: none;
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	background-color: #0077ff;
+	color: #d1d7e0;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color 0.3s;
 }
 
 .sub-btn:hover {
-    background-color: #005fcc;
+	background-color: #005fcc;
 }
 
-input[type="submit"],
-input[type="reset"] {
-  width: 100%;
-  padding: 0.9rem;
-  background-color: #013d50;
-  color: #D1D7E0;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
+input[type='submit'],
+input[type='reset'] {
+	width: 100%;
+	padding: 0.9rem;
+	background-color: #013d50;
+	color: #d1d7e0;
+	border: none;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
 }
 
-input[type="submit"]:hover,
-input[type="reset"]:hover {
-  background-color: #015872;
+input[type='submit']:hover,
+input[type='reset']:hover {
+	background-color: #015872;
 }
 
-.btn-card{
-  background-color: transparent;
-  color: white;
-  padding: 0.4rem 1.2rem;
-  border: 0.0625rem white solid;
-  border-radius: 50em;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  transform-origin: center;
-  height: 2.25rem;
-  will-change: transform;
-  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease, border-color 0.2s;
-  box-shadow: 0 0.2rem 0.9rem rgba(255, 255, 255, 0.2);
+.btn-card {
+	background: linear-gradient(
+		135deg,
+		rgba(255, 255, 255, 0.1) 0%,
+		rgba(255, 255, 255, 0.05) 100%
+	);
+	color: white;
+	padding: 0.4rem 1.2rem;
+	border: 0.0625rem solid rgba(255, 255, 255, 0.3);
+	border-radius: 50em;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+	transform-origin: center;
+	height: 2.25rem;
+	will-change: transform, box-shadow, background, border-color;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: 0 0.2rem 0.9rem rgba(255, 255, 255, 0.15),
+		inset 0 0.0625rem 0 rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(0.5rem);
+	position: relative;
+	overflow: hidden;
+}
+
+.btn-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.2),
+		transparent
+	);
+	transition: left 0.5s ease;
+}
+
+.btn-card:hover::before {
+	left: 100%;
+}
+
+.btn-card:hover {
+	background: linear-gradient(
+		135deg,
+		rgba(255, 255, 255, 0.2) 0%,
+		rgba(255, 255, 255, 0.1) 100%
+	);
+	border-color: rgba(255, 255, 255, 0.6);
+	box-shadow: 0 0.4rem 1.5rem rgba(255, 255, 255, 0.25),
+		0 0 0 0.0625rem rgba(255, 255, 255, 0.1),
+		inset 0 0.0625rem 0 rgba(255, 255, 255, 0.2);
+	transform: translateY(-0.125rem);
 }
 
 .btn-card:active {
-  transform: scale(0.93);
-  box-shadow: 0 0.1rem 0.4rem rgba(255, 255, 255, 0.1);
-}
-
-.btn-card:hover{
-  box-shadow: 0.2rem 0 0.9rem rgba(255, 255, 255, 0.2);
+	transform: translateY(0) scale(0.95);
+	background: linear-gradient(
+		135deg,
+		rgba(255, 255, 255, 0.15) 0%,
+		rgba(255, 255, 255, 0.05) 100%
+	);
+	box-shadow: 0 0.125rem 0.5rem rgba(255, 255, 255, 0.1),
+		inset 0 0.0625rem 0 rgba(255, 255, 255, 0.05);
+	transition: all 0.1s ease;
 }
 
 .btn-card.fav {
-  border-color: #ff4c4c !important;
-  color: #ff4c4c;
+	background: linear-gradient(
+		135deg,
+		rgba(255, 76, 76, 0.2) 0%,
+		rgba(255, 76, 76, 0.1) 100%
+	);
+	border-color: rgba(255, 76, 76, 0.6) !important;
+	color: #ff4c4c;
+	box-shadow: 0 0.2rem 0.9rem rgba(255, 76, 76, 0.3),
+		inset 0 0.0625rem 0 rgba(255, 76, 76, 0.1);
+}
+
+.btn-card.fav:hover {
+	background: linear-gradient(
+		135deg,
+		rgba(255, 76, 76, 0.3) 0%,
+		rgba(255, 76, 76, 0.15) 100%
+	);
+	border-color: rgba(255, 76, 76, 0.8) !important;
+	box-shadow: 0 0.4rem 1.5rem rgba(255, 76, 76, 0.4),
+		0 0 0 0.0625rem rgba(255, 76, 76, 0.2),
+		inset 0 0.0625rem 0 rgba(255, 76, 76, 0.2);
+}
+
+.btn-card.fav:active {
+	background: linear-gradient(
+		135deg,
+		rgba(255, 76, 76, 0.25) 0%,
+		rgba(255, 76, 76, 0.1) 100%
+	);
+	box-shadow: 0 0.125rem 0.5rem rgba(255, 76, 76, 0.2),
+		inset 0 0.0625rem 0 rgba(255, 76, 76, 0.1);
 }
