@@ -9,15 +9,16 @@
     <div class="nav-right">
         <?php if (isset($_SESSION['username'])): ?>
             <div class="profile-menu-wrapper" id="profileWrapper">
+                <span class="username-label"><?= htmlspecialchars($_SESSION['username']) ?></span>
                 <img src="/assets/img/default-avatar.png" alt="avatar" class="avatar" id="avatarToggle">
                 <div class="dropdown-menu" id="profileMenu">
-                    <span class="menu-username"><?= htmlspecialchars($_SESSION['username']) ?></span>
                     <a href="/pages/profile.php">Профиль</a>
                     <a href="/pages/settings.php">Настройки</a>
                     <a href="/pages/favorites.php">Избранное</a>
                     <a href="/pages/logout.php" class="logout-link">Выход</a>
                 </div>
             </div>
+
         <?php else: ?>
             <a href="/pages/login.php">Вход</a>
             <a class="reg-btn anim-hover-box-shadow" href="/pages/register.php">Регистрация</a>
