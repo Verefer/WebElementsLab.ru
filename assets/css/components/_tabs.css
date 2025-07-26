@@ -1,26 +1,51 @@
 /* Стили для табов и превью */
+.tabs {
+	display: flex;
+	gap: 8px;
+	margin-bottom: 8px;
+}
+
 .tab-btn {
-  padding: 6px 12px;
-  border: none;
-  background: #93a1b1;
-  cursor: pointer;
+	background: #232323;
+	color: #bbb;
+	border: none;
+	border-radius: 6px 6px 0 0;
+	padding: 8px 20px;
+	font-size: 1em;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s;
+	position: relative;
+	top: 2px;
 }
-.tab-btn.active {
-  background: #eee;
-  font-weight: bold;
+
+.tab-btn.active,
+.tab-btn:hover,
+.tab-btn:focus {
+	background: #2d2d2d;
+	color: #4fc3f7;
+	z-index: 2;
+	outline: none;
+	font-weight: 600;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
 .tab-content {
-  position: relative;
-  height: auto;
-  display: none;
-  margin-top: 10px;
+	position: relative;
+	height: auto;
+	display: none;
+	margin-top: 10px;
+	background: #2d2d2d;
+	border-radius: 0 0 8px 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	padding: 0;
 }
 .tab-content.active {
-  margin: 0;
-  display: block;
+	margin: 0;
+	display: block;
 }
+
 .preview-frame {
-  width: 100%;
-  height: 150px;
-  border: 1px solid #ccc;
+	width: 100%;
+	height: 150px;
+	border: 1px solid #232323;
 }

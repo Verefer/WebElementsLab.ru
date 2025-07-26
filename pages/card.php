@@ -87,7 +87,7 @@ $tags = explode(',', $snippet['tag'] ?? '');
 
             <!-- Code Tabs -->
             <div class="block-code">
-                <div class="tabs d-flex gap05">
+                <div class="tabs d-flex">
                 <button class="tab-btn active" data-tab="html">HTML</button>
                 <button class="tab-btn" data-tab="css">CSS</button>
                 <button class="tab-btn" data-tab="js">JS</button>

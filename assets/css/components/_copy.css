@@ -5,4 +5,22 @@
 	right: 0;
 	z-index: 10;
 	cursor: pointer;
+	background: #232323;
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	padding: 6px 16px;
+	font-size: 1em;
+	transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+	margin-bottom: 8px;
+	margin-left: auto;
+	display: block;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.copy-btn:hover,
+.copy-btn:focus {
+	background: #4fc3f7;
+	color: #232323;
+	outline: none;
 }
