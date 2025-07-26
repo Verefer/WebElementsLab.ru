@@ -59,6 +59,7 @@
 	padding: 12px 24px;
 	color: white;
 	text-decoration: none;
+	background-color: transparent;
 	border-radius: 6px;
 	border: 1px white solid;
 	transition: all 0.3s ease;
