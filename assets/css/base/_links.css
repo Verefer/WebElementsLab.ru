@@ -1,19 +1,29 @@
-/* Базовые стили для ссылок */
+/* Базовые стили ссылки */
 a {
 	color: var(--accent);
 	text-decoration: none;
 	position: relative;
 	outline: none;
 
-	/* Плавная анимация цвета и тени */
-	transition: color 0.3s ease, text-shadow 0.3s ease;
+	/* Плавный переход цвета и анимации */
+	transition: color 0.3s ease;
 }
 
-/* Эффект при наведении */
+/* Наведение */
 a:hover {
 	color: var(--accent-hover);
-	text-shadow: 0 0 6px var(--accent), 0 0 12px var(--accent),
-		0 0 18px var(--accent-hover);
+	animation: neon-pulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes neon-pulse {
+	0% {
+		text-shadow: 0 0 4px var(--accent), 0 0 10px var(--accent),
+			0 0 20px var(--accent-hover), 0 0 40px var(--accent-hover);
+	}
+	100% {
+		text-shadow: 0 0 2px var(--accent), 0 0 6px var(--accent),
+			0 0 14px var(--accent-hover), 0 0 28px var(--accent-hover);
+	}
 }
 
 /* Стили для внешних ссылок */
