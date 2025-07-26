@@ -1,10 +1,106 @@
 /* Стили для всех ссылок на сайте */
 a {
-    color: #2a7ae2;
-    text-decoration: underline;
-    transition: color 0.2s, background 0.2s;
+	color: var(--accent);
+	text-decoration: none;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+	outline: none;
 }
+
+/* Основной эффект при наведении */
 a:hover {
-    color: #0056b3;
-    text-decoration: none;
+	color: var(--accent-hover);
+	text-shadow: 0 0 8px rgba(42, 122, 226, 0.4);
+}
+
+/* Эффект подчеркивания при наведении */
+a:hover::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+	transform: scaleX(1);
+	transform-origin: left;
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Начальное состояние подчеркивания */
+a::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Фокус для доступности */
+a:focus {
+	color: var(--accent-hover);
+	text-shadow: 0 0 8px rgba(42, 122, 226, 0.6);
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+/* Активное состояние */
+a:active {
+	transform: scale(0.98);
+	transition: transform 0.1s ease;
+}
+
+/* Стили для внешних ссылок */
+a[href^='http']::before {
+	content: '↗';
+	margin-right: 0.25rem;
+	font-size: 0.8em;
+	opacity: 0.7;
+	transition: opacity 0.2s ease;
+}
+
+a[href^='http']:hover::before {
+	opacity: 1;
+}
+
+/* Стили для ссылок в кнопках (отключаем эффекты) */
+.btn-card a,
+input[type='submit'] a,
+input[type='reset'] a {
+	text-shadow: none;
+}
+
+.btn-card a::after,
+input[type='submit'] a::after,
+input[type='reset'] a::after {
+	display: none;
+}
+
+.btn-card a:focus,
+input[type='submit'] a:focus,
+input[type='reset'] a:focus {
+	outline: none;
+}
+
+/* Стили для ссылок в навигации */
+nav a {
+	font-weight: 500;
+	letter-spacing: 0.5px;
+}
+
+/* Стили для ссылок в футере */
+footer a {
+	opacity: 0.8;
+	transition: opacity 0.2s ease;
+}
+
+footer a:hover {
+	opacity: 1;
+	text-shadow: 0 0 6px rgba(42, 122, 226, 0.3);
 }
