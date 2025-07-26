@@ -1,5 +1,7 @@
 /* Стили для кнопки копирования */
 .copy-btn {
+	height: 2.3rem;
+	width: 9rem;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -8,9 +10,9 @@
 	background: #232323;
 	color: #fff;
 	border: none;
-	border-radius: 6px;
+	border-radius: 0 0 0 6px;
 	padding: 6px 16px;
-	font-size: 1em;
+	font-size: 0.8rem;
 	transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 	margin-bottom: 8px;
 	margin-left: auto;
@@ -18,8 +20,7 @@
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.copy-btn:hover,
-.copy-btn:focus {
+.copy-btn:hover {
 	background: #4fc3f7;
 	color: #232323;
 	outline: none;

@@ -2,7 +2,6 @@
 .tabs {
 	display: flex;
 	gap: 8px;
-	margin-bottom: 8px;
 }
 
 .tab-btn {
@@ -22,10 +21,9 @@
 .tab-btn:hover,
 .tab-btn:focus {
 	background: #2d2d2d;
-	color: #4fc3f7;
+	color: var(--succes);
 	z-index: 2;
 	outline: none;
-	font-weight: 600;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -38,6 +36,7 @@
 	border-radius: 0 0 8px 8px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 	padding: 0;
+	border-radius: 0 0 6px 6px;
 }
 .tab-content.active {
 	margin: 0;
