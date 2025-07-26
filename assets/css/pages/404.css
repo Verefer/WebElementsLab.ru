@@ -14,7 +14,7 @@
 	font-size: 8rem;
 	font-weight: bold;
 	color: rgba(255, 255, 255, 0);
-	-webkit-text-stroke: 2px var(--error);
+	-webkit-text-stroke: 2px var(--main-color);
 	text-shadow: 0 0 2rem var(--error);
 	margin: 0;
 	line-height: 1;
