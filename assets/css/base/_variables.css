@@ -1,15 +1,16 @@
 /* Цвета, шрифты, переменные */
 :root {
-  --main-bg: #000022;
-  --main-color: #D1D7E0;
-  --accent: #2a7ae2;
-  --accent-hover: #0056b3;
-  --error: #F44336;
-  --success: #4CAF50;
+	--main-bg: #000022;
+	--main-color: #d1d7e0;
+	--accent: #2a7ae2;
+	--accent-hover: #6ea8fe;
+	--error: #f44336;
+	--success: #4caf50;
 }
 body {
-  font-family: "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  background-color: var(--main-bg);
-  color: var(--main-color);
-  width: 100%;
+	font-family: 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji';
+	background-color: var(--main-bg);
+	color: var(--main-color);
+	width: 100%;
 }

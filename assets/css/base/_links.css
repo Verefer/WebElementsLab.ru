@@ -1,52 +1,19 @@
-/* Базовые стили ссылки */
+/* Базовые стили для ссылок */
 a {
 	color: var(--accent);
 	text-decoration: none;
 	position: relative;
 	outline: none;
-	transition: color 0.3s, text-shadow 0.3s;
+
+	/* Плавная анимация цвета и тени */
+	transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* Анимация подчёркивания */
-a::after {
-	content: '';
-	position: absolute;
-	bottom: -2px;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background: linear-gradient(
-		90deg,
-		var(--accent),
-		var(--accent-hover),
-		var(--accent)
-	);
-	background-size: 200% auto;
-	transform: scaleX(1);
-	transform-origin: left;
-	opacity: 0;
-	transition: opacity 0.3s;
-	pointer-events: none;
-}
-
-/* Наведение */
+/* Эффект при наведении */
 a:hover {
 	color: var(--accent-hover);
-	text-shadow: 0 0 8px rgba(42, 122, 226, 0.4);
-}
-
-a:hover::after {
-	opacity: 1;
-	animation: underline-pulse 1.2s linear infinite;
-}
-
-@keyframes underline-pulse {
-	from {
-		background-position: 0% 0;
-	}
-	to {
-		background-position: 200% 0;
-	}
+	text-shadow: 0 0 6px var(--accent), 0 0 12px var(--accent),
+		0 0 18px var(--accent-hover);
 }
 
 /* Стили для внешних ссылок */
