@@ -18,7 +18,7 @@ session_start();
 <body>
     <?php require_once __DIR__ . '/templates/header.php'; ?>
     <div class="wrapper">
-        <main>
+        <main class="block-main">
             <div class="error-container">
                 <div class="error-illustration">🔍</div>
                 <h1 class="error-code">404</h1>
