@@ -13,10 +13,12 @@
 .error-code {
 	font-size: 8rem;
 	font-weight: bold;
-	color: #ff6b6b;
+	color: transparent;
+	-webkit-text-stroke: 2px var(--error); /* Обводка */
+	text-shadow: 0 0 2px var(--error),
+		/* Подсветка вокруг */ 2px 2px 4px rgba(0, 0, 0, 0.1); /* Мягкая тень */
 	margin: 0;
 	line-height: 1;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 	animation: pulse 2s infinite;
 }
 
@@ -56,10 +58,10 @@
 
 .error-btn {
 	padding: 12px 24px;
-	background: #007bff;
 	color: white;
 	text-decoration: none;
 	border-radius: 6px;
+	border: white 1px solid;
 	transition: all 0.3s ease;
 	border: none;
 	cursor: pointer;
@@ -68,19 +70,13 @@
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.error-btn:hover {
-	background: #0056b3;
-	transform: translateY(-2px);
-	box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-}
-
 .error-btn.secondary {
-	background: #6c757d;
+	border: #6c757d 1px solid;
 }
 
 .error-btn.secondary:hover {
-	background: #545b62;
-	box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+	border: #545b62 1px sol;
+	box-shadow: 0 0 12px rgba(108, 117, 125, 0.3);
 }
 
 .error-illustration {
