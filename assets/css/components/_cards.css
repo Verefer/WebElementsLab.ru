@@ -1,9 +1,27 @@
 /* Стили для карточек и блоков */
 .block-element {
-	border: 0.0625rem white solid;
+	border: 0.0625rem solid transparent;
+	background: linear-gradient(#373737, #373737) padding-box,
+		linear-gradient(270deg, #4fc3f7, #ff6b6b, #4ecdc4, #45b7d1, #4fc3f7)
+			border-box;
+	background-size: 200% 200%;
+	animation: animated-gradient 6s ease-in-out infinite;
 	width: 14rem;
 	height: 14rem;
 	display: flex;
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+}
+
+@keyframes animated-gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .block-code {
