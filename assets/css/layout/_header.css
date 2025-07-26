@@ -4,10 +4,7 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	border: 2px solid #fff;
-	border-top: none !important;
 	background-color: var(--layot-bg);
-	border-radius: 0 0 12px 12px;
 }
 
 .logo-header {
