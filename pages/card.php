@@ -4,7 +4,7 @@ require_once __DIR__ . '/../includes/db.php';
 
 $id = $_GET['id'] ?? 1;
 
-$stmt = $pdo->prepare("SELECT s.*, u.username FROM snippets s JOIN users u ON s.user_id = u.id WHERE s.id = ?");
+$stmt = $pdo->prepare("SELECT s.*, u.username, u.id as user_id FROM snippets s JOIN users u ON s.user_id = u.id WHERE s.id = ?");
 $stmt->execute([$id]);
 $snippet = $stmt->fetch();
 
@@ -62,7 +62,7 @@ $tags = explode(',', $snippet['tag'] ?? '');
     <div class="d-flex gap1 card-page f-d-column">
         <div class="d-flex j-c-space-between">
         <h1 class="card-title"><?= htmlspecialchars($snippet['name']) ?></h1>
-        <h2><?= htmlspecialchars($snippet['username']) ?></h2>
+        <h2><a href="/pages/profile.php?id=<?= urlencode($snippet['user_id']) ?>" class="author-link"><?= htmlspecialchars($snippet['username']) ?></a></h2>
         </div>
         <div class="f-d-row d-flex gap1">
             <!-- Preview -->
